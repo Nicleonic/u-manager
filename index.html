@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <!-- OwlCarousel -->
+    <link rel="stylesheet" href="owlcarousel/assets/owl.carousel.min.css">
+    <title>U-Manager | home</title>
+</head>
+<body style="height: 100vh">
+    <!--========          SIGN IN              =======-->
+    <section class="popup-login" id="loginpop" >
+        
+        <div class="form-login">
+            <div class="cancelPop" id="cancel">
+                <img src="img/icons8-macos-close-30.png" alt="">
+             </div>
+            <h2>Login</h2>
+            <form action="" class="container "  >
+                <div class="form-group">
+                    <label for="mailinput">Identifiant</label>
+                    <input type="text" class="form-control" name="email" id="mailinput" placeholder="Id" required>    
+                </div>
+                <div class="form-group">
+                    <label for="passwordA">Mot de Pass</label>
+                    <input type="password" class="form-control" name="passwordA" id="passwordA" placeholder="****">
+                </div>
+                <button id="connect-btn" class=" btn" type="submit" style="color: white;">Connexion</button>
+                <!-- <p class="cancel" id="cancel">Annuler</p> -->
+            </form>
+        </div>
+    </section> 
+    <!--========        END  SIGN IN              =======-->
+
+    <header>
+        <div>
+            <div class="icon"></div>
+            <h3>U-Manager</h3>
+        </div>
+        <div>
+            <button id="loginBtn" >Login</button>
+        </div>
+    </header>
+
+    <section class="body">
+        <div class="img">
+
+        </div>
+
+        <div class="txt">
+            <div class="txt1">
+                <h3>About us</h3>
+                <p>
+                    U-Manager, le système de gestion des universités, est une plateforme complète conçue pour simplifier et optimiser tous les aspects liés à la gestion des universités. Que ce soit pour les inscriptions, la gestion des jurys, le suivi des notes, ou la planification des horaires de cours, U-Manager met à disposition un ensemble d'outils et de fonctionnalités puissantes pour faciliter le travail administratif et améliorer l'expérience des étudiants.
+                </p>
+            </div>
+            <div class="txt1">
+                <h3>Contact</h3>
+                <p>Nous sommes ravis de vous accueillir sur U-Manager, le système de gestion des universités. Nous comprenons l'importance d'une communication fluide et efficace, c'est pourquoi nous sommes là pour répondre à toutes vos questions et vous offrir un soutien complet.</p>
+                <!-- <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut quas ad labore quod a mollitia pariatur iste quam optio repellat ut qui aliquid dolor quae, error velit omnis eius tempora consectetur esse hic. Sint nam totam est ducimus dolores eveniet, nisi enim. Atque amet mollitia quas, odit officia aliquid delectus!</span> -->
+                <span class="team">
+                    L'équipe U-Manager <br>
+                    E-mail : <span>contact@u-manager.com </span> 
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script src="owlcarousel/owl.carousel.js"></script>
+    <script src="owlcarousel/owl.carousel.min.js"></script>
+    <script>
+        var owl = $('.owl-carousel');
+        owl.owlCarousel({
+            loop:true,
+
+            margin:10,
+            nav:true,
+            // responsive: {
+            // 0: {
+            //     items: 1
+            // },
+            // 520: {
+            //     items: 2
+            // },
+            // 600: {
+            //     items: 2
+            // },
+            // 1000: {
+            //     items: 3
+            // }
+            // },
+            autoplayTimeout:{
+            Type: Number,
+            Default: 5000
+            }
+        
+        })
+    </script>
+</body>
+</html>
