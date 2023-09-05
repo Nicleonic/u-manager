@@ -62,7 +62,6 @@ header>div{
     grid-template-columns: 50% 50%;
     gap: 20px;
     height: 78vh;
-    /* height: 50rem; */
     margin: 8% 5%;
 }
 .body>.img{
@@ -214,7 +213,7 @@ input{
 }
 .body-container{
     padding: 3rem 6rem;
-    border: 2px solid blueviolet;
+    /* border: 2px solid blueviolet; */
     min-height: 90vh;
     margin-top: 6rem;
 }
@@ -248,26 +247,29 @@ input{
     transition: all ease-in .3s;
 
 }
+/* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+                                                               INSCRIPTION
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 /* -----------------------------------------------SIGNUP */
 .body-container-signup{
     position: relative;
-    z-index: 99999;
+    /* z-index: 99999; */
     backdrop-filter: blur(5px);
-    background: rgba(255, 255, 255, 0.779);
+    background: rgba(228, 226, 226, 0.883);
     /* display: none;
     scale: 0; */
     overflow-x: hidden;
-    overflow-y: scroll;
+    /* overflow: scroll; */
     padding: 2rem 6rem;
     height: 100vh;
     /* padding-bottom: 2rem; */
 }
-.body-container-signup.active{
+/* .body-container-signup.active{
     transform-origin: center;
     display: block;
     transition: all ease-out .3s;
     scale: 1;
-}
+} */
 .body-container-signup .signin{
     padding: 1rem 0%;
     /* border: 2px solid saddlebrown; */
@@ -357,4 +359,346 @@ position: relative;
     background: var(--primary);
     width: 16rem;
     color: white;
+}
+
+/* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                                                            MEDIA QUERIES 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+@media (max-width: 992px){
+    .body{
+        display: block;
+        padding: 0;
+        /* border: 3px solid blueviolet; */
+    }
+    .body>.img{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+        border: 3px solid var(--primary);
+        background: url(img/firstBAC.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    .txt1{
+        display: none;
+        /* border: 3px solid blue; */
+        gap: 0;
+        background: white;
+        padding: 5px 25px 15px 25px;
+        border-radius: 5px;
+    }
+    /* APPARITORAT */
+    .body-container{
+        padding: 2rem auto;
+        /* border: 2px solid rgb(226, 131, 43); */
+        min-height: 90vh;
+        margin-top: 6rem;
+    }
+    .body-content{
+        /* border: 3px dashed royalblue; */
+        display: grid;
+        overflow-y: scroll;
+        grid-template-columns: repeat(5, 8rem);
+        gap: .8rem .8rem;
+    }
+    .body-content .content{
+        cursor: pointer;
+        position: relative;
+        z-index: 1999;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height:6rem;
+        width: 8rem;
+        border-radius: 5px;
+        background-color: white;
+        color: black;
+    } .body-content .content h3{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    /* INSCRIPTION */
+    .body-container-signup{
+        padding: 1rem ;
+    }
+    .id_newStudent{
+        display: grid;
+        grid-template-columns: repeat(3, 16rem);
+        gap: 1rem;
+    }
+    .religion .input-group input{
+        width: 20rem;
+    }
+    .adresseActuelle{
+        display: grid;
+        grid-template-columns: repeat(3, 16rem);
+        gap: 1rem;
+    }
+    .high-school{
+        display: grid;
+        grid-template-columns: repeat(3, 16rem);
+        gap: 1rem;
+    }
+    .afterHighschool{
+        border-radius: 5px 10px;
+        width: calc(20rem * 1);
+    }
+    .afterHighschool .input-group > textarea{
+        width: 33.4rem!important;
+    }
+    .univBefore{
+        display: grid;
+        grid-template-columns: repeat(3, 16rem);
+        gap: 1rem;
+    }
+    .langues{
+        display: grid;
+        grid-template-columns: repeat(3, 16rem);
+        gap: 1rem;
+    }
+    .filiereChoice{
+        display: grid;
+        grid-template-columns: repeat(3, 16rem);
+        gap: 1rem;
+    }
+    .input-group-check .input-group > *{
+        cursor: pointer;
+    }
+    .prerequis .input-group-check{
+        display: grid;
+        grid-template-columns: repeat(1, 20rem);
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 768px){
+    .body{
+        /* margin-bottom: 0; */
+        position: relative;
+        height: 80vh;
+        margin: 14% 5%;
+    }
+    .body>.img{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+        border: 3px solid var(--primary);
+        background: url(img/firstBAC.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    /* APPARITOR */
+    .body-container{
+        padding: 1rem auto;
+        /* border: 2px solid rgb(9, 139, 5); */
+        min-height: 90vh;
+        margin-top: 6rem;
+    }
+    .body-content{
+        /* border: 2px solid yellow; */
+        padding: 1.2rem auto ;
+        display: grid;
+        grid-template-columns: repeat(4, 6rem);
+        gap: 1rem 1rem;
+    }
+    .body-content .content{
+        cursor: pointer;
+        position: relative;
+        z-index: 1999;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height:5rem;
+        width: 6rem;
+        border-radius: 5px;
+        background-color: white;
+        color: black;
+    } 
+    .body-content .content h3{
+        font-size: 1rem;
+        font-weight: bolder;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+      /* INSCRIPTION */
+    .body-container-signup{
+        padding: 1rem ;
+    }
+    .id_newStudent{
+        display: grid;
+        grid-template-columns: repeat(2, 20rem);
+        gap: 1rem;
+    }
+    .religion .input-group input{
+        width: 20rem;
+    }
+    .adresseActuelle{
+        display: grid;
+        grid-template-columns: repeat(2, 20rem);
+        gap: 1rem;
+    }
+    .high-school{
+        display: grid;
+        grid-template-columns: repeat(2, 20rem);
+        gap: 1rem;
+    }
+    .afterHighschool{
+        border-radius: 5px 10px;
+        width: calc(20rem * 1);
+    }
+    .afterHighschool .input-group > textarea{
+        width: 20rem!important;
+    }
+    .univBefore{
+        display: grid;
+        grid-template-columns: repeat(2, 20rem);
+        gap: 1rem;
+    }
+    .langues{
+        display: grid;
+        grid-template-columns: repeat(2, 20rem);
+        gap: 1rem;
+    }
+    .filiereChoice{
+        display: grid;
+        grid-template-columns: repeat(2, 20rem);
+        gap: 1rem;
+    }
+    .input-group-check .input-group > *{
+        cursor: pointer;
+    }
+    .prerequis .input-group-check{
+        display: grid;
+        grid-template-columns: repeat(2, 20rem);
+        gap: 1rem;
+    }
+
+}
+@media (max-width: 500px){
+    .body{
+        /* border: 4px solid rgb(255, 128, 0); */
+        position: relative;
+        height: 84vh;
+        margin: 26% 5%;
+    }
+    .body>.img{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+        border: 3px solid var(--primary);
+        background: url(img/firstBAC.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+     /* APPARITOR */
+     .body-container{
+        /* border: 2px solid rgb(139, 5, 47); */
+        padding: .5rem auto;
+        min-height: 90vh;
+        margin-top: 6rem;
+    }
+    
+    .body-content{
+        padding: 1.6rem;
+        display: grid;
+        grid-template-columns: repeat(3, 6rem);
+        gap: .8rem 1rem;
+       
+    }
+    .body-content .content{
+        cursor: pointer;
+        position: relative;
+        z-index: 1999;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height:5rem;
+        width: 6rem;
+        border-radius: 5px;
+        background-color: white;
+        color: black;
+    } .body-content .content h3{
+        font-size: 1rem;
+        font-weight: bolder;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+      /* INSCRIPTION */
+      .body-container-signup{
+        padding: 1rem ;
+    }
+    .id_newStudent{
+        display: grid;
+        grid-template-columns: repeat(1, 20rem);
+        gap: 1rem;
+    }
+    .religion .input-group input{
+        width: 20rem;
+    }
+    .adresseActuelle{
+        display: grid;
+        grid-template-columns: repeat(1, 20rem);
+        gap: 1rem;
+    }
+    .high-school{
+        display: grid;
+        grid-template-columns: repeat(1, 20rem);
+        gap: 1rem;
+    }
+    .afterHighschool{
+        border-radius: 5px 10px;
+        width: calc(20rem * 1);
+    }
+    .afterHighschool .input-group > textarea{
+        width: 20rem!important;
+    }
+    .univBefore{
+        display: grid;
+        grid-template-columns: repeat(1, 20rem);
+        gap: 1rem;
+    }
+    .langues{
+        display: grid;
+        grid-template-columns: repeat(1, 20rem);
+        gap: 1rem;
+    }
+    .filiereChoice{
+        display: grid;
+        grid-template-columns: repeat(1, 20rem);
+        gap: 1rem;
+    }
+    .input-group-check .input-group > *{
+        cursor: pointer;
+    }
+    .prerequis .input-group-check{
+        display: grid;
+        grid-template-columns: repeat(1, 20rem);
+        gap: 1rem;
+    }
+
 }
