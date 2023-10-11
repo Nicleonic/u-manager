@@ -19,8 +19,8 @@
             <div class="title">
                 <h2>Aparitorat</h2>
             </div>
-            <div class="actions">
-                <button>Log Out</button>
+            <div class="actions" onclick="window.open('find.html','_self')">
+                <button>Retour</button>
             </div>
 
 
@@ -37,26 +37,26 @@
                 <div class="st-name">
                     <div class="cont-infos">
                         <h3 class="lab">Noms : </h3>
-                        <h3 class="info">,,,,,,,</h3>
+                        <h3 class="info"><span id="nom"></span> <span id="postnom"></span> <span id="prenom"></span></h3>
                     </div>
                     <div class="cont-infos">
-                        <h3 class="lab">Sexe : </h3>
-                        <h3 class="info">,,,,,,,</h3>
+                        <h3 class="lab" >Sexe : </span> </h3>
+                        <h3 class="info" id="sexe">...........</h3>
                     </div>
                     <div class="cont-infos">
                         <h3 class="lab">Promotion : </h3>
-                        <h3 class="info">,,,,,,,</h3>
+                        <h3 class="info" id="promotion">...........</h3>
                     </div>
                     <div class="cont-infos">
                         <h3 class="lab">Faculté  : </h3>
-                        <h3 class="info">,,,,,,,</h3>
+                        <h3 class="info" id="faculte">...........</h3>
                     </div>
     
                 </div>
                 <div class="st-matt">
                     <div class="cont-infos">
                         <h3 class="lab">Matt : </h3>
-                        <h3 class="info">,,,,,,,</h3>
+                        <h3 class="info" id="matricule">...........</h3>
                     </div>
                 </div>
                 
@@ -64,83 +64,51 @@
             <div class="container-st">
                 <div class="content-group">
                     <h3 class="label">Lieu de naissance</h3>
-                    <h3 class="info">--------------</h3>
+                    <h3 class="info" id="lnaissance">--------------</h3>
                 </div>
                 <div class="content-group">
                     <h3 class="label">Date de naissance</h3>
-                    <h3 class="info">--------------</h3>
+                    <h3 class="info" id="dnaissance">--------------</h3>
                 </div>
                 <div class="content-group">
                     <h3 class="label">Numero de Tel</h3>
-                    <h3 class="info">--------------</h3>
+                    <h3 class="info" id="telephone">--------------</h3>
                 </div>
                 <div class="content-group">
                     <h3 class="label">Nom du Pere</h3>
-                    <h3 class="info">--------------</h3>
+                    <h3 class="info" id="pere">--------------</h3>
                 </div>
                 <div class="content-group">
                     <h3 class="label">Nom de la Mere</h3>
-                    <h3 class="info">--------------</h3>
+                    <h3 class="info" id="mere">--------------</h3>
                 </div>
                 <div class="content-group">
                     <h3 class="label">Numero du Pere</h3>
-                    <h3 class="info">--------------</h3>
+                    <h3 class="info" id="tprere">--------------</h3>
                 </div>
                 <div class="content-group">
                     <h3 class="label">Numero de la Mere</h3>
-                    <h3 class="info">--------------</h3>
+                    <h3 class="info" id="tmere">--------------</h3>
                 </div>
                 <div class="content-group">
                     <h3 class="label">Pays d'origine</h3>
-                    <h3 class="info">--------------</h3>
+                    <h3 class="info" id="paysorigine">--------------</h3>
                 </div>
                 <div class="content-group">
                     <h3 class="label">Province d'origine</h3>
-                    <h3 class="info">--------------</h3>
+                    <h3 class="info" id="provinceorigine">--------------</h3>
                 </div>
                 <div class="content-group">
                     <h3 class="label">Territoire d'origine</h3>
-                    <h3 class="info">--------------</h3>
+                    <h3 class="info" id="territoireorigine">--------------</h3>
                 </div>
                 <div class="content-group">
                     <h3 class="label">Confession religieuse</h3>
-                    <h3 class="info">--------------</h3>
+                    <h3 class="info" id="religion">--------------</h3>
                 </div>
                 <div class="content-group">
                     <h3 class="label">Ville</h3>
-                    <h3 class="info">--------------</h3>
-                </div>
-                <div class="content-group">
-                    <h3 class="label">Commune</h3>
-                    <h3 class="info">--------------</h3>
-                </div>
-                <div class="content-group">
-                    <h3 class="label">Quartier</h3>
-                    <h3 class="info">--------------</h3>
-                </div>
-                <div class="content-group">
-                    <h3 class="label">Date de naissance</h3>
-                    <h3 class="info">--------------</h3>
-                </div>
-                <div class="content-group">
-                    <h3 class="label">Date de naissance</h3>
-                    <h3 class="info">--------------</h3>
-                </div>
-                <div class="content-group">
-                    <h3 class="label">Date de naissance</h3>
-                    <h3 class="info">--------------</h3>
-                </div>
-                <div class="content-group">
-                    <h3 class="label">Date de naissance</h3>
-                    <h3 class="info">--------------</h3>
-                </div>
-                <div class="content-group">
-                    <h3 class="label">Date de naissance</h3>
-                    <h3 class="info">--------------</h3>
-                </div>
-                <div class="content-group">
-                    <h3 class="label">Date de naissance</h3>
-                    <h3 class="info">--------------</h3>
+                    <h3 class="info" id="territoireorigine">--------------</h3>
                 </div>
 
             </div>
@@ -210,5 +178,36 @@
         </div>
     
     </section>
+    <script src="src/jquery.min.js"></script>
+    <script>
+        let req=window.location.search
+        if (req.search("id=")) {
+            let id=req.split("=")[1]
+            console.log(id);
+            $.get("server/", {"etudiant_0-byId":id},
+                function (data, textStatus, jqXHR) {
+                    if (data.length>0) {
+                        data.forEach(element => {
+                            console.log(element);
+                            const keys = Object.keys(element);
+                            console.log(keys);
+                            for(var i of keys){
+                                console.log(i);
+                                $("#"+i).text(element[i]);
+                            }
+                        });
+                    } else {
+                        window.open("find.html","_self")
+                    }
+                    
+                    // console.log(data);
+                },
+                "json"
+            );
+        }else{
+            window.open("find.html","_self")
+        }
+        // console.log(window.location.search.search("id="));
+    </script>
 </body>
 </html>

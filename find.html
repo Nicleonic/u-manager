@@ -102,30 +102,24 @@
     <header>
         <div class="head-content">
             <div class="title">
-                <h2>Aparitorat</h2>
+                <h2 id="title">Etudiants Inscris</h2>
             </div>
             <div class="actions">
                 <form class="find" action="">
-                    <input type="text" placeholder="Find student">
+                  
+                    <input type="text" id="search" placeholder="Find student">
                     <select name="fac">
                       <option value="all">All</option>
                       <option value="FTSI">FTSI</option>
                       <option value="FTHEO">FTHEO</option>
                       <option value="FASGEC">FASGEC</option>
                     </select>
+                    
                 </form>
+                <!-- <div class="actions" onclick="window.open('find.html','_self')"> -->
+                  
+              <!-- </div> -->
             </div>
-            <!-- <div class="filter">
-              <form action="/" method="post">
-                  <label for="fac"></label>
-                  <select name="fac">
-                      <option value="all">All</option>
-                    <option value="FTSI">FTSI</option>
-                    <option value="FTHEO">FTHEO</option>
-                    <option value="FASGEC">FASGEC</option>
-                  </select>
-              </form>
-            </div> -->
         </div>
         
     </header>
@@ -133,107 +127,9 @@
         
         <div class="listStudent">
             <div class="container">
-                <ul class="list">
-                  <li class="student">
-                    <img src="img/user.png" alt="Photo de l'étudiant">
-                    <div class="details">
-                      <h2>Nom de l'étudian 0001t</h2>
-                      <p>Matricule</p>
-                      <p>Promotion</p>
-                      <p>Sexe</p>
-                      <p>Faculté</p>
-                    </div>
-                  </li>
-                  <li class="student">
-                    <img src="img/user.png" alt="Photo de l'étudiant">
-                    <div class="details">
-                      <h2>Nom de l'étudiant</h2>
-                      <p>Matricule</p>
-                      <p>Promotion</p>
-                      <p>Sexe</p>
-                      <p>Faculté</p>
-                    </div>
-                  </li>
-                  <li class="student">
-                    <img src="img/user.png" alt="Photo de l'étudiant">
-                    <div class="details">
-                      <h2>Nom de l'étudiant</h2>
-                      <p>Matricule</p>
-                      <p>Promotion</p>
-                      <p>Sexe</p>
-                      <p>Faculté</p>
-                    </div>
-                  </li>
-                  <li class="student">
-                    <img src="img/user.png" alt="Photo de l'étudiant">
-                    <div class="details">
-                      <h2>Nom de l'étudiant</h2>
-                      <p>Matricule</p>
-                      <p>Promotion</p>
-                      <p>Sexe</p>
-                      <p>Faculté</p>
-                    </div>
-                  </li>
-                  <li class="student">
-                    <img src="img/user.png" alt="Photo de l'étudiant">
-                    <div class="details">
-                      <h2>Nom de l'étudiant</h2>
-                      <p>Matricule</p>
-                      <p>Promotion</p>
-                      <p>Sexe</p>
-                      <p>Faculté</p>
-                    </div>
-                  </li>
-                  <li class="student">
-                    <img src="img/user.png" alt="Photo de l'étudiant">
-                    <div class="details">
-                      <h2>Nom de l'étudiant</h2>
-                      <p>Matricule</p>
-                      <p>Promotion</p>
-                      <p>Sexe</p>
-                      <p>Faculté</p>
-                    </div>
-                  </li>
-                  <li class="student">
-                    <img src="img/user.png" alt="Photo de l'étudiant">
-                    <div class="details">
-                      <h2>Nom de l'étudiant</h2>
-                      <p>Matricule</p>
-                      <p>Promotion</p>
-                      <p>Sexe</p>
-                      <p>Faculté</p>
-                    </div>
-                  </li>
-                  <li class="student">
-                    <img src="img/user.png" alt="Photo de l'étudiant">
-                    <div class="details">
-                      <h2>Nom de l'étudiant</h2>
-                      <p>Matricule</p>
-                      <p>Promotion</p>
-                      <p>Sexe</p>
-                      <p>Faculté</p>
-                    </div>
-                  </li>
-                  <li class="student">
-                    <img src="img/user.png" alt="Photo de l'étudiant">
-                    <div class="details">
-                      <h2>Nom de l'étudiant</h2>
-                      <p>Matricule</p>
-                      <p>Promotion</p>
-                      <p>Sexe</p>
-                      <p>Faculté</p>
-                    </div>
-                  </li>
-                  <li class="student">
-                    <img src="img/user.png" alt="Photo de l'étudiant">
-                    <div class="details">
-                      <h2>Nom de l'étudiant</h2>
-                      <p>Matricule</p>
-                      <p>Promotion</p>
-                      <p>Sexe</p>
-                      <p>Faculté</p>
-                    </div>
-                  </li>
+                <ul class="list" id="list">
+      
+                  
                 </ul>
               </div>
               
@@ -241,10 +137,39 @@
     </section>
     
 
-    <script>
-        
-    </script>
-
-
+    
+    <script src="src/jquery.min.js"></script>
 </body>
 </html>
+<script>
+  function loadList(reqData,url) {
+    console.log(url);
+      $.post(url, reqData,
+        function (data, textStatus, jqXHR) {
+          console.log(data);
+          data.forEach(e => {
+            $("#list").append(
+              `
+                <li class="student" onclick="oneStud(`+e.id+`)">
+                  <img src="img/user.png" alt="Photo de l'étudiant">
+                  <div class="details">
+                    <h2>`+e.nom+` `+e.postnom+` `+e.prenom+`</h2>
+                    <p>Matricule : `+e.matricule+` </p>
+                  </div>
+                </li>
+              `
+            );
+          });
+        },
+        "json"
+      );
+  }
+  loadList({},"server/?etudiant_0-all");
+  $("#search").keydown(function (e) { 
+    $("#list").html("");
+    loadList({"nom":$(this).val()},"server/?etudiant_0-search")
+  });
+  function oneStud(id){
+    window.open("stud.html?id="+id,"_self")
+  }
+</script>

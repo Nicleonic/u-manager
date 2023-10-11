@@ -11,33 +11,34 @@
 </head>
 <body >
     
-    <!-- <header>
+    <header>
         <div class="head-content">
             <div class="title">
                 <h2>Aparitorat</h2>
             </div>
             <div class="actions">
-                <button>deconnexion</button>
+                <button onclick="window.open('apparitorat.html','_self')">Home</button>
             </div>
+
         </div>
-    </header> -->
+    </header>
     <!-- Inscription BEGIN -->
-    <section class="body-container-signup" id="signup">
+    <section class="body-container-signup" id="signup" style="margin-top: 8vh;">
         <div class="signin">
             <form action="">
                 <fieldset class="id_newStudent">
                     <legend>Identité du (de la) candidat (e)</legend>
                     <div class="input-group">
                         <label for="name">Nom</label>
-                        <input type="text" id="name" >
+                        <input type="text" id="nom" >
                     </div>
                     <div class="input-group">
                         <label for="">Post-nom</label>
-                        <input type="text"  >
+                        <input type="text"  name="postnom">
                     </div>
                     <div class="input-group">
                         <label for="">Prénom</label>
-                        <input type="text"  >
+                        <input type="text"  name="prenom">
                     </div>
                     <div class="input-group">
                         <label for="">Sexe</label>
@@ -52,7 +53,7 @@
                     </div>
                     <div class="input-group">
                         <label for="">Date de naissance</label>
-                        <input type="date" name="" id="">
+                        <input type="date" name="" id="" name="dnaissance">
                     </div>
                     <div class="input-group">
                         <label for="">Nom du Père</label>
@@ -185,24 +186,20 @@
                     <legend>Choix de filière</legend>
                     <div class="input-group">
                         <label for="FACULTE"></label>
-                        <select name=""  id="">
-                            <option value="">FATHEO</option>
-                            <option value="">FATSI</option>
-                            <option value="">FATSIC</option>
-                            <option value="">FAT..</option>
-                            <option value="">FATH..</option>
-                            <option value="">FA...</option>
-                            <option value="">F....</option>
+                        <select name=""  id="faculte">
+                            
                         </select>
                     </div>
                     <div class="input-group">
                         <label for="DEPARTEMENT"></label>
-                        <select name="" id="">
-                            <option value="">blablabla</option>
-                            <option value="">blablabla</option>
-                            <option value="">blablabla</option>
-                            <option value="">blablabla</option>
-                            <option value="">blablabla</option>
+                        <select name="" id="departement" name="departement">
+                            
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="DEPARTEMENT"></label>
+                        <select name="" id="promotion" name="promotion">
+                            
                         </select>
                     </div>
                 </fieldset>
@@ -247,5 +244,39 @@
     <script src="script.js"></script>
     <script src="owlcarousel/owl.carousel.js"></script>
     <script src="owlcarousel/owl.carousel.min.js"></script>
+    <script src="src/jquery.min.js"></script>
+    <script>
+        $("#faculte").change(function (e) { 
+            e.preventDefault();
+            setDepartement($(this).val())
+        });
+        $.get("server/", {"faculte-all":""},
+            function (data, textStatus, jqXHR) {
+                data.forEach(element => {
+                    $("#faculte").append('<option value='+element["id"]+'>'+element["nom_complet"]+'</option>');
+                });
+                setDepartement(data[0]["id"])
+            },
+            "json"
+        );
+        
+        $.getJSON("server/", {"promotion-all":""},
+            function (data, textStatus, jqXHR) {
+                data.forEach(element => {
+                    $("#promotion").append('<option value="'+element["id"]+'">'+element["nom_complet"]+'</option>');
+                })
+            }
+        );
+        function setDepartement(id) {
+            $("#departement").html("");
+            $.post("server/?departement-search", {'id-faculte':id},
+                    function (data, textStatus, jqXHR) {
+                        data.forEach(element => {
+                            $("#departement").append('<option>'+element["nom_complet"]+'</option>');
+                        });
+                    }
+                );
+        }
+    </script>
 </body>
 </html>
