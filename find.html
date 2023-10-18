@@ -5,140 +5,55 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <!-- fontAwesome -->
+    <link rel="stylesheet" href="node_modules/fontweb/css/all.css">
+    <link rel="stylesheet" href="node_modules/fontweb/css/all.min.css">
     <!-- OwlCarousel -->
     <link rel="stylesheet" href="owlcarousel/assets/owl.carousel.min.css">
     <title>U-Manager | Find</title>
 </head>
-<body style="min-height: 100vh">
-    <style>
-        .find{
-            border: 0px solid rgb(57, 8, 171);
-        }
-        .find> input{
-            margin-top: 1rem;
-            margin-right: 0;
-        }
-        .find > select{
-          margin-left: 0;
-        }
-        .containerFind{
-            margin-top: 5rem;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            /* border: 2px solid rebeccapurple; */
-        }
-        .filter{
-            border: 0px solid blueviolet;
-            display: flex;
-            justify-content: center;
-            justify-items: center;
-        }
-        .filter > form{
-            /* border: 2px solid green; */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            align-items: center;
-        }
-        .filter > form label{
-            margin-right: 5px;
-        }
-        .filter > form > select{
-            max-width: 14rem;
-            text-align: center;
-        }
-        .listStudent{
-            border: 1px solid green;
-            /* overflow-y: scroll; */
-        }
-
-        /* finder Style */
-        .container {
-            width: 600px;
-            margin: 0 auto;
-        }
-
-        .list {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        .student {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            padding: 10px;
-            border: 1px solid #ccc;
-        }
-        .student img {
-            width: 100px;
-            height: 100px;
-        }
-
-        .student .details {
-          display: flex;
-          flex-direction: column;
-          width: calc(100% - 120px);
-          /* border: 2px solid rebeccapurple; */
-          padding: 0;
-        }
-        .student .details *{
-          /* border: 2px solid red; */
-          margin-top: 0;
-          margin-bottom: .5rem;
-        }
-
-        .student .details h2 {
-            /* border: 1px solid green; */
-            font-size: 18px;
-        }
-
-        .student .details p {
-            font-size: 14px;
-        }
-    </style>
-    <header>
-        <div class="head-content">
-            <div class="title">
-                <h2 id="title">Etudiants Inscris</h2>
-            </div>
-            <div class="actions">
-                <form class="find" action="">
-                  
-                    <input type="text" id="search" placeholder="Find student">
-                    <select name="fac">
-                      <option value="all">All</option>
-                      <option value="FTSI">FTSI</option>
-                      <option value="FTHEO">FTHEO</option>
-                      <option value="FASGEC">FASGEC</option>
-                    </select>
-                    
-                </form>
-                <!-- <div class="actions" onclick="window.open('find.html','_self')"> -->
-                  
-              <!-- </div> -->
-            </div>
+<body >
+  <header>
+    <div class="head-content">
+        <div class="title">
+          <h2 id="title">Etudiants Inscrits</h2>
         </div>
-        
-    </header>
-    <section class="containerFind ">
-        
-        <div class="listStudent">
-            <div class="container">
-                <ul class="list" id="list">
-      
-                  
-                </ul>
+        <div class="actions">
+          <form class="find form-group border-none" action="">
+            <input type="text" class="form-control  border-none" id="search" placeholder="Find student">
+            <select class="form-select form-select-sm text-center w-25  border-none" name="fac">
+              <option value="all">All</option>
+              <option value="FTSI">FTSI</option>
+              <option value="FTHEO">FTHEO</option>
+              <option value="FASGEC">FASGEC</option>
+            </select>
+          </form>
+        </div>
+        <a href="apparitorat.html" class="btn btn-log"><i class="fa-solid fa-arrow-left"></i></a>
+    </div>
+  </header>
+  <section class="containerFind ">
+      <div class="container ">
+          <ul class="list" id="list">
+            <li class="student " onclick="oneStud(`+e.id+`)">
+              <img src="img/user.png" alt="Photo de l'étudiant">
+              <div class="details">
+                <h2>Nicleonic</h2>
+                <p>Matricule : <span>7620</span></p>
+                <p>Promotion : <span>L2</span> </p>
+                <p>Département : <span>Génie Informatique</span> </p>
+                <p>Faculté : <span>Sciences Appliquées</span> </p>
               </div>
-              
+            </li>
+          </ul>
         </div>
-    </section>
-    
+  </section>
+  
 
-    
-    <script src="src/jquery.min.js"></script>
+  
+  <script src="src/jquery.min.js"></script>
 </body>
 </html>
 <script>
@@ -154,7 +69,7 @@
                   <img src="img/user.png" alt="Photo de l'étudiant">
                   <div class="details">
                     <h2>`+e.nom+` `+e.postnom+` `+e.prenom+`</h2>
-                    <p>Matricule : `+e.matricule+` </p>
+                    <p>Matricule : <span>`+e.matricule+`</span> </p>
                   </div>
                 </li>
               `

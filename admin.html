@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- style -->
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <!-- fontAwesome -->
+    <link rel="stylesheet" href="node_modules/fontweb/css/all.css">
+    <link rel="stylesheet" href="node_modules/fontweb/css/all.min.css">
+
+    <title>U-Manager Admin</title>
+</head>
+<body>
+    <!-- staff -->
+    <div class="staff-container" id="staff_Display">
+        <div class="container">
+            <div class="cancel_btn" onclick={removeStaffDisplay()} id="staff_Cancel">
+                <span><i class="fas fa-xmark"></i></span>
+            </div>
+            <div class="staff-title">
+                <h2>staff crea</h2>
+            </div>
+            <div class="staff-form">
+                <form action="">
+                    <div class="form-group">
+                        <label for=" ">Identifiant</label>
+                        <input type="text" class="form-control" name=" " id=" " placeholder="" >    
+                        <label for=" ">Identifiant</label>
+                        <input type="text" class="form-control" name=" " id=" " placeholder="" >    
+                        <label for="passwordA">Mot de Pass</label>
+                        <input type="password" class="form-control" name=" " id=" " placeholder >
+                        <label for=" ">Identifiant</label>
+                        <input type="text" class="form-control" name=" " id=" " placeholder="" >    
+                        <label for=" ">Mot de Pass</label>
+                        <input type="password" class="form-control" name=" " id=" " placeholder >
+                        <label for=" ">Identifiant</label>
+                        <input type="text" class="form-control" name=" " id=" " placeholder="" >    
+                        <label for=" ">Mot de Pass</label>
+                        <input type="password" class="form-control" name=" " id=" " placeholder >
+                        <label for=" ">Identifiant</label>
+                        <input type="text" class="form-control" name=" " id=" " placeholder="" >    
+                        <label for=" ">Mot de Pass</label>
+                        <input type="password" class="form-control" name=" " id=" " placeholder >
+                    </div>
+                    <div class="validation-controls">
+                        <button id="staff_validation" class=" btn btn-danger w-50" type="submit" onclick={removeStaffDisplay()} style="color: white;">Connexion</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+     </div>
+     <!-- staff end -->
+     <!-- super user | Admin -->
+     <div class="staff-container" id="admin_Display">
+        <div class="container">
+            <div class="cancel_btn" onclick={removeAdminDisplay()} id="admin_Cancel">
+                <span><i class="fas fa-xmark"></i></span>
+            </div>
+            <div class="staff-title">
+                <h2>Admin Crea</h2>
+            </div>
+            <div class="staff-form">
+                <form action="">
+                    <div class="form-group">
+                        <label for=" ">Identifiant</label>
+                        <input type="text" class="form-control" name=" " id=" " placeholder="" >    
+                        <label for=" ">Identifiant</label>
+                        <input type="text" class="form-control" name=" " id=" " placeholder="" >    
+                        <label for=" ">Mot de Pass</label>
+                        <input type="password" class="form-control" name=" " id=" " placeholder >
+                        <label for=" ">Identifiant</label>
+                        <input type="text" class="form-control" name=" " id=" " placeholder="" >    
+                        <label for=" ">Mot de Pass</label>
+                        <input type="password" class="form-control" name=" " id=" " placeholder >
+                        <label for=" ">Identifiant</label>
+                        <input type="text" class="form-control" name=" " id=" " placeholder="" >    
+                        <label for=" ">Mot de Pass</label>
+                        <input type="password" class="form-control" name=" " id=" " placeholder >
+                        <label for=" ">Identifiant</label>
+                        <input type="text" class="form-control" name=" " id=" " placeholder="" >    
+                        <label for=" ">Mot de Pass</label>
+                        <input type="password" class="form-control" name=" " id=" " placeholder >
+                    </div>
+                    <div class="validation-controls">
+                        <button id="staff_validation" class=" btn btn-danger w-50" type="submit" onclick={removeStaffDisplay()} style="color: white;">Connexion</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+     </div>
+     <!-- super user {Admin} end -->
+
+
+
+    <div class="sidebar">
+        <h2>Admin</h2>
+       <div class="side-list">
+        <ul>
+            <li id="staff_Add">
+                <a href="#">
+                    <i class="fa-solid fa-plus"></i>
+                    <span>Staff</span>
+                </a>
+            </li>
+            <li id="admin_Add">
+                <a href="#">
+                    <i class="fa-solid fa-user-secret"></i>
+                    <span>Admin</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-bars"></i>
+                    <span>Edit</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-user"></i>
+                    <span>Edit</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-user-tie"></i>
+                    <span>Edit</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-book"></i>
+                    <span>Edit</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-user-secret"></i>
+                    <span>Edit</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-book"></i>
+                    <span>Edit</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-lock"></i>
+                    <span>Edit</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-clipboard-user"></i>
+                    <span>Edit</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-users"></i>
+                    <span>Edit</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-clipboard-user"></i>
+                    <span>Edit</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-clipboard-user"></i>
+                    <span>Edit</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <span>Edit</span>
+                </a>
+            </li>
+
+        </ul>
+       </div>
+    </div>
+    <div class="main">
+        <div class="main-header">
+            <h2>Admin DashBoard</h2>
+            <div class="controls">
+                <i class="fa-solid fa-right-from-bracket"></i>
+            </div>
+        </div>
+        <div class="main-body">
+            <div class="container">
+                <!-- <h class="heading">DashBord | Admin</h> -->
+                <div class="box-container">
+                    <div class="box">
+                        <h2 class="title">Students</h2>
+                        <h2 class="subtitle">439 Students</h2>
+                    </div>
+                    <div class="box">
+                        <h2 class="title">Students</h2>
+                        <h2 class="subtitle">439 Students</h2>
+                    </div>
+                    <div class="box">
+                        <h2 class="title">Students</h2>
+                        <h2 class="subtitle">439 Students</h2>
+                    </div>
+                    <div class="box">
+                        <h2 class="title">Students</h2>
+                        <h2 class="subtitle">439 Students</h2>
+                    </div>
+                    <div class="box">
+                        <h2 class="title">Students</h2>
+                        <h2 class="subtitle">439 Students</h2>
+                    </div>
+                    <div class="box">
+                        <h2 class="title">Students</h2>
+                        <h2 class="subtitle">439 Students</h2>
+                    </div>
+                    <div class="box">
+                        <h2 class="title">Students</h2>
+                        <h2 class="subtitle">439 Students</h2>
+                    </div>
+                    <div class="box">
+                        <h2 class="title">Students</h2>
+                        <h2 class="subtitle">439 Students</h2>
+                    </div>
+                    <div class="box">
+                        <h2 class="title">Students</h2>
+                        <h2 class="subtitle">439 Students</h2>
+                    </div>
+                    <div class="box">
+                        <h2 class="title">Students</h2>
+                        <h2 class="subtitle">439 Students</h2>
+                    </div>
+                    <div class="box">
+                        <h2 class="title">Students</h2>
+                        <h2 class="subtitle">439 Students</h2>
+                    </div>
+                    <div class="box">
+                        <h2 class="title">Students</h2>
+                        <h2 class="subtitle">439 Students</h2>
+                    </div>
+                </div>
+            </div>
+        </div></div>
+    <script>
+        let staffDisplay = document.getElementById('staff_Display');
+        let staffCancel = document.getElementById('staff_Cancel');
+        let staffValidation = document.getElementById('staff_Validation');
+        let staffAdd = document .getElementById('staff_Add');
+        // Admin
+        let adminDisplay = document.getElementById('admin_Display')
+        let adminAdd = document.getElementById('admin_Add');
+
+        // staff controls
+        staffAdd.addEventListener('click', ()=>{
+            console.log("staff display [ON]")
+
+        staffDisplay.classList.add("active")
+        })
+
+        function removeStaffDisplay(){
+            staffDisplay.classList.remove("active");
+        }
+        // Admin controls
+        adminAdd.addEventListener('click', ()=>{
+            adminDisplay.classList.add('active');
+        })
+        function removeAdminDisplay(){
+            adminDisplay.classList.remove("active");
+        }
+    </script>
+</body>
+</html>

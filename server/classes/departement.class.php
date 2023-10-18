@@ -26,5 +26,4 @@ if (isset($_GET[$departement->table."-search"])) {
     $output=$departement->search($_POST);
 }
 
-$output=$departement->search(["nom_complet"=>"geni"]);
             

@@ -1,0 +1,211 @@
+@media (max-width: 992px){
+    .body{
+        display: block;
+        padding: 0;
+        /* border: 3px solid blueviolet; */
+    }
+    .body>.img{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+        border: 3px solid var(--primary);
+        background: url(img/firstBAC.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    .txt1{
+        display: none;
+        /* border: 3px solid blue; */
+        gap: 0;
+        background: white;
+        padding: 5px 25px 15px 25px;
+        border-radius: 5px;
+    }
+    /* APPARITORAT */
+    .body-container{
+        position: relative;
+        z-index: 5;
+        padding: 2rem 0;
+        /* border: 2px solid rgb(226, 131, 43); */
+        min-height: 90vh;
+        margin-top: 6rem;
+    }
+    .body-content >*{
+        z-index: 5;
+    }
+    .body-content{
+        padding: .1rem 9%;
+        position: relative;
+        /* border: 3px dashed royalblue; */
+        z-index: 5;
+        display: grid;
+        /* overflow-y: scroll; */
+        grid-template-columns: repeat(5, 8rem);
+        gap: .8rem .8rem;
+    }
+    .body-content .content{
+        cursor: pointer;
+        position: relative;
+        z-index: 1999;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height:6rem;
+        width: 8rem;
+        border-radius: 5px;
+        background-color: white;
+        color: black;
+    } .body-content .content h3{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+}
+@media (max-width: 768px){
+    .container-st{
+        border: 0px solid darkblue;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fill,calc(100%/3));
+    }
+    .body{
+        /* margin-bottom: 0; */
+        position: relative;
+        height: 80vh;
+        margin: 14% 5%;
+    }
+    .body>.img{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+        border: 3px solid var(--primary);
+        background: url(img/firstBAC.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    /* APPARITOR */
+    .body-container{
+        padding: 1rem auto;
+        min-height: 90vh;
+        margin-top: 6rem;
+    }
+    .body-content{
+        padding: .5rem 12% ;
+        display: grid;
+        grid-template-columns: repeat(5, 6rem);
+        gap: 1rem 1rem;
+    }
+    .body-content .content{
+        cursor: pointer;
+        position: relative;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height:5rem;
+        width: 6rem;
+        border-radius: 5px;
+        background-color: white;
+        color: black;
+    } 
+    .body-content .content h3{
+        font-size: 1rem;
+        font-weight: bolder;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+}
+@media (max-width: 500px){
+    .container-st{
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fill,calc(100%/2));
+    }
+    .body{
+        /* border: 4px solid rgb(255, 128, 0); */
+        position: relative;
+        height: 84vh;
+        margin: 26% 5%;
+    }
+    .body>.img{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+        border: 3px solid var(--primary);
+        background: url(img/firstBAC.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+     /* APPARITOR */
+     .body-container{
+        /* border: 2px solid rgb(139, 5, 47); */
+        padding: 0 2%;
+        min-height: 90vh;
+        margin-top: 6rem;
+        width: 100%;
+        overflow-x: hidden;
+    }
+    .body-container .student-info > .head{
+        display: block;
+        justify-items: center;
+        justify-content: center;
+    }
+    .body-container .student-info > .head *{
+        /* border: 2px solid forestgreen; */
+        width: 100%;
+    }
+    .body-container .student-info > .head .st-img{
+        width: 100%;
+        height: 12rem;
+    }
+    
+    .body-content{
+        overflow-x: hidden;
+        width: fit-content;
+        padding: 1.6rem;
+        display: grid;
+        grid-template-columns: repeat(2, 6rem);
+        gap: 1rem ;
+       
+    }
+    .body-content .content{
+        cursor: pointer;
+        position: relative;
+        z-index: 1999;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height:5rem;
+        width: 6rem;
+        border-radius: 5px;
+        background-color: white;
+        color: black;
+    } .body-content .content h3{
+        font-size: 1rem;
+        font-weight: bolder;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+}

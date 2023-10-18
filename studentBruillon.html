@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <!-- fontAwesome -->
+    <link rel="stylesheet" href="node_modules/fontweb/css/all.css">
+    <link rel="stylesheet" href="node_modules/fontweb/css/all.min.css">
+    <link rel="stylesheet" href="node_modules/fontweb/css/fontawesome.css">
+    <link rel="stylesheet" href="node_modules/fontweb/css/fontawesome.min.css">
+    <!-- OwlCarousel -->
+    <link rel="stylesheet" href="owlcarousel/assets/owl.carousel.min.css">
+    <title>U-M | studentBr</title>
+</head>
+<body >
+    <style>
+        .identites, .etudeSec{
+            padding-left: 1rem;
+            margin-bottom: 1rem;
+            /* justify-content: start; */
+            align-items: flex-start;
+        }
+        .identites h2, .etudeSec h2{
+            margin-bottom: 0;
+            font-size: 1.4rem;
+            font-weight: bold;
+        }
+       .identites p, .etudeSec p{
+        /* display: inline; */
+        padding-bottom: 0;
+        padding-top: 0;
+        font-size: 1.2rem;
+        margin: 0 auto;
+        /* border: 1px solid red; */
+       }
+       .identites p span, .etudeSec p span{
+        font-size: 1.4rem;
+        color: rgb(6, 86, 86);
+       }
+       .container{
+        /* border: 1px solid darkblue; */
+        padding: .2rem 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+        align-items: flex-start;
+       }
+       .container *{
+        padding-left: 0;
+        margin-left: 0;
+       }
+       .container p{
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+       }
+       .container:nth-child(even){
+        background-color: aqua;
+       }
+        
+    </style>
+    <header>
+        <div class="head-content">
+            <div class="title">
+                <h2>Aparitorat</h2>
+            </div>
+            <div class="actions" onclick="window.open('find.html','_self')">
+                <button class="btn btn-log"><i class="fa-solid fa-arrow-left"></i></button>
+            </div>
+
+
+        </div>
+    </header>
+    
+    <section class="body-container">
+     
+        <div class="student-info">
+            <div class="identites">
+                <h2 class="title">Identités</h2>
+                <div class="container">
+                    <p class="names">Nom, Post-Nom et Prénom : <span>Abigael baraka shangwe</span></p>
+                    <p class="matt">Matricule : <span>7420</span></p>
+                    <p class="lieudate">Lieu et date de naissance : <span> Goma, 25 Décembre 2002</span></p>
+                    <p class="sexe">Sexe : <span>F</span></p>
+                    <p class="nationalite">Nationalité : <span>Conolaise</span></p>
+                    <p class="nompere">Noms du Père : <span>JSJWK UWYgsAS</span></p>
+                    <p class="nonmere">Noms de la Mère : <span>KJLJDakk KSdnsdlk</span></p>
+                    <p class="provinceorigine">Province d'origine : <span>Sud-Kivu</span></p>
+                    <p class="territoire">Territoire : <span>Kalehe</span></p>
+                </div>
+            </div>
+            <div class="etudeSec">
+                <h2>Etudes Secondaires</h2>
+                <div class="container">
+                    <p class="diplome">Diplôme d'accès à l'ensignement supérieur et Universitaire : <span>Diplôme d'Etat </span> numéro <span>98879302-0-0-983</span></p>
+                    <p class="mention">Mention ou pourcentages <span>60</span>, Section <span>Scientifique</span> option <span>Chimie Biologie.</span></p>
+                </div>
+            </div>
+        </div>
+    
+    </section>
+   
+</body>
+</html>
