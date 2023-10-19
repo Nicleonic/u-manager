@@ -24,7 +24,7 @@
     --bs-btn-disabled-border-color: rgba(91, 87, 174)!important;
 }
 div::-webkit-scrollbar-thumb{
-    background-color: yellowgreen;
+    /* background-color: yellowgreen; */
     scrollbar-color: blue;
 }
 .container-blur.active{
