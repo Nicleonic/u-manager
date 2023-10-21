@@ -42,7 +42,6 @@ class tables extends bdd{
         $sign=$sign."?";
         $sql = "INSERT INTO ".$this->table." (".$keys.") VALUES (".$sign.")";
         $exec=$this->connect()->prepare($sql)->execute($values);
-       
         if ($exec==1) {
             $message=$this->table." Enregistre avec succes";
         } else {

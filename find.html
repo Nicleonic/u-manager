@@ -53,6 +53,7 @@
       $.post(url, reqData,
         function (data, textStatus, jqXHR) {
           console.log(data);
+          data.reverse();
           data.forEach(e => {
             $("#list").append(
               `

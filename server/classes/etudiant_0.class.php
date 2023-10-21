@@ -11,6 +11,7 @@ if (isset($_GET[$etudiant_0->table."-all"])) {
     $output=$etudiant_0->All();
 }
 if (isset($_GET[$etudiant_0->table."-new"])) {
+    // print_r($_POST);
     $output=$etudiant_0->new($_POST);
 }
 if (isset($_GET[$etudiant_0->table."-byId"])) {
