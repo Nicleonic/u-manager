@@ -37,16 +37,7 @@
   <section class="containerFind ">
       <div class="container ">
           <ul class="list" id="list">
-            <li class="student " onclick="oneStud(`+e.id+`)">
-              <img src="img/user.png" alt="Photo de l'étudiant">
-              <div class="details">
-                <h2>Nicleonic</h2>
-                <p>Matricule : <span>7620</span></p>
-                <p>Promotion : <span>L2</span> </p>
-                <p>Département : <span>Génie Informatique</span> </p>
-                <p>Faculté : <span>Sciences Appliquées</span> </p>
-              </div>
-            </li>
+            
           </ul>
         </div>
   </section>
@@ -65,11 +56,14 @@
           data.forEach(e => {
             $("#list").append(
               `
-                <li class="student" onclick="oneStud(`+e.id+`)">
+                <li class="student " onclick="oneStud(`+e.id+`)">
                   <img src="img/user.png" alt="Photo de l'étudiant">
                   <div class="details">
                     <h2>`+e.nom+` `+e.postnom+` `+e.prenom+`</h2>
-                    <p>Matricule : <span>`+e.matricule+`</span> </p>
+                    <p>Matricule : <span>`+e.matricule+`</span></p>
+                    <p>Promotion : <span>`+e.promotion+`</span> </p>
+                    <p>Département : <span>`+e.departement+`</span> </p>
+                    <p>Faculté : <span>`+e.faculte+`</span> </p>
                   </div>
                 </li>
               `

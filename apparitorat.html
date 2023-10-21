@@ -26,7 +26,7 @@
                 <h2>Inscription du nouvel étudiant</h2>
             </div>
             <div class="signin py-0">
-                <form action="" class="">
+                <form>
                     <div class="inputs-datas py-0 my-0">
                       
                         <fieldset class="form-group">
@@ -34,88 +34,88 @@
                             
                             <div class="form-group i-group">
                                 <label for="name" class="form-label">Nom</label>
-                                <input type="text" class="form-control"   placeholder="" required> 
+                                <input type="text" class="form-control" name="nom"   placeholder="" required> 
                             </div>
                             <div class="form-group i-group">
                                 <label for="" class="form-label">Post-nom</label>
-                                <input type="text" class="form-control"   placeholder="" required> 
+                                <input type="text" class="form-control" name="postnom"   placeholder="" required> 
                             </div>
                             <div class="form-group i-group">
                                 <label for="" class="form-label">Prénom</label>
-                                <input type="text" class="form-control"   placeholder="" required> 
+                                <input type="text" class="form-control" name="prenom"   placeholder="" required> 
                             </div>
                             <div class="form-group i-group">
                                 <label for="" class="form-label">Sexe</label>
-                                <select class="form-select form-select-sm" >
-                                  <option  selected value="1">Masculin</option>
-                                  <option value="2">Féminin</option>
+                                <select class="form-select form-select-sm" name="sexe" >
+                                  <option  selected value="M">Masculin</option>
+                                  <option value="F">Féminin</option>
                                 </select>
                             </div>
                             <div class="form-group i-group">
                                 <label for="" class="form-label">Lieu de naissance</label>
-                                <input type="text" class="form-control"   placeholder="" required> 
+                                <input type="text" class="form-control" name="lnaissance"   placeholder="" required> 
                             </div>
                             <div class="form-group i-group">
                                 <label for="" class="form-label">Date de naissance</label>
-                                <input type="text" class="form-control"   placeholder="" required> 
+                                <input type="date" class="form-control" name="dnaissance"   placeholder="" required> 
                             </div>
                             <div class="form-group i-group">
                                 <label for="" class="form-label">Nom du Père</label>
-                                <input type="text" class="form-control"   placeholder="" required> 
+                                <input type="text" class="form-control" name="pere_nom"   placeholder="" required> 
                             </div>
                             <div class="form-group i-group">
                                 <label for="" class="form-label">Tel. du Père </label>
-                                <input type="text" class="form-control"   placeholder="" required> 
+                                <input type="text" class="form-control" name="pere_tel"   placeholder="" required> 
         
                             </div>
                             <div class="form-group i-group">
                                 <label for="" class="form-label">Nom de la mère</label>
-                                <input type="text" class="form-control"   placeholder="" required> 
+                                <input type="text" class="form-control" name="mere_nom"  placeholder="" required> 
                             </div>
                             <div class="form-group i-group">
                                 <label for="" class="form-label">Tel. de la Mère</label>
-                                <input type="text" class="form-control"   placeholder="" required> 
+                                <input type="text" class="form-control" name="mere_tel"   placeholder="" required> 
                             </div>
                         </fieldset>
                         <fieldset class="origine">
                             <!-- <legend>Origine</legend> -->
                             <div class="form-group i-group">
                                 <label for="" class="form-label">Pays d'origine</label>
-                                <input type="text" class="form-control"   placeholder="" required> 
+                                <input type="text" class="form-control" name="pays_origine"  placeholder="" required> 
                             </div>
                             <div class="form-group i-group">
                                 <label for="" class="form-label">Province d'origine</label>
-                                <input type="text" class="form-control"   placeholder="" required> 
+                                <input type="text" class="form-control" name="province_origine"   placeholder="" required> 
                             </div>
                             <div class="form-group i-group">
                                 <label for="" class="form-label">Territoire d'origine</label>
-                                <input type="text" class="form-control"   placeholder="" required> 
+                                <input type="text" class="form-control" name="territoire_origine"   placeholder="" required> 
                             </div>
                         </fieldset>
                         <fieldset class="religion">
                             <!-- <legend>Opinion Réligieuse</legend> -->
                             <div class="form-group i-group">
                                 <label for="" class="form-label">Confession réligieuse</label>
-                                <input type="text" class="form-control"   placeholder="" required> 
+                                <input type="text" class="form-control" name="religion"  placeholder="" required> 
                             </div>
                         </fieldset>
                         <fieldset class="adresseActuelle">
                             <!-- <legend>Adresse Actuelle du (de la) candidat (e)</legend> -->
                             <div class="form-group i-group">
                                 <label for="" class="form-label">Ville</label>
-                                <input type="text" class="form-control"   placeholder="" required> 
+                                <input type="text" class="form-control" name="ville_actuelle"  placeholder="" required> 
                             </div>
                             <div class="form-group i-group">
                                 <label for="" class="form-label">Commune</label>
-                                <input type="text" class="form-control"   placeholder="" required> 
+                                <input type="text" class="form-control" name="commune_actulle"  placeholder="" required> 
                             </div>
                             <div class="form-group i-group">
                                 <label for="" class="form-label">Quartier</label>
-                                <input type="text" class="form-control"   placeholder="" required> 
+                                <input type="text" class="form-control" name="quartier_actuel"   placeholder="" required> 
                             </div>
                             <div class="form-group i-group">
                                 <label for="" class="form-label">Téléphone</label>
-                                <input type="text" class="form-control"   placeholder="" required> 
+                                <input type="text" class="form-control" name="telephone"  placeholder="" required> 
                             </div>
                         </fieldset>
                         <fieldset class="high-school">
@@ -190,27 +190,19 @@
                         <fieldset class="filiereChoice">
                             <!-- <legend>Choix de filière</legend> -->
                             <div class="mb-3">
-                                <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                                <select class="form-select form-select-sm" id="faculte" name="faculte" aria-label=".form-select-sm example">
                                   <option selected="">Faculté</option>
-                                  <option value="1">One</option>
-                                  <option value="2">Two</option>
-                                  <option value="3">Three</option>
                                 </select>
                             </div>
                             <div class="mb-3">
-                                <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                                <select class="form-select form-select-sm" name="departement" id="departement" aria-label=".form-select-sm example">
                                   <option selected="">Département</option>
-                                  <option value="1">One</option>
-                                  <option value="2">Two</option>
-                                  <option value="3">Three</option>
                                 </select>
                             </div>
                             <div class="mb-3">
-                                <select class="form-select form-select-sm" aria-label=".form-select-sm example">
-                                  <option selected="">Filière</option>
-                                  <option value="1">One</option>
-                                  <option value="2">Two</option>
-                                  <option value="3">Three</option>
+                                <select class="form-select form-select-sm" name="promotion" id="promotion" aria-label=".form-select-sm example">
+                                  <option selected="">Promotion</option>
+                                  
                                 </select>
                             </div>
                             <div class="mb-3">
@@ -283,9 +275,15 @@
             <div class="content" onclick="alert('fonctionnalité non disponible')">
                 <h3>Gestion de cours</h3>
             </div>
+            <div class="content" onclick="window.open('admin.html','_self')">
+                <h3>Administration</h3>
+            </div>
+            
        </div>
     </section>
     <script src="script.js"></script>
+    <script src="src/jquery.min.js"></script>
+
     <script>
         let signUpBtn = document.getElementById('signBn');
         let inscrire = document.getElementById('signEtud');
@@ -301,7 +299,61 @@
             signupDisplay.classList.remove('active');
         }
         
-
+        $("#faculte").change(function (e) { 
+            e.preventDefault();
+            setDepartement($(this).val())
+        });
+        $.get("server/", {"faculte-all":""},
+            function (data, textStatus, jqXHR) {
+                data.forEach(element => {
+                    $("#faculte").append('<option value='+element["id"]+'>'+element["nom_complet"]+'</option>');
+                });
+                setDepartement(data[0]["id"])
+            },
+            "json"
+        );
+        $.getJSON("server/", {"promotion-all":""},
+            function (data, textStatus, jqXHR) {
+                data.forEach(element => {
+                    $("#promotion").append('<option value="'+element["id"]+'">'+element["nom_complet"]+'</option>');
+                })
+            }
+        );
+        function setDepartement(id) {
+            $("#departement").html("");
+            // $.post("url", data,
+            //     function (data, textStatus, jqXHR) {
+                    
+            //     },
+            //     "dataType"
+            // );
+            $.post("server/?departement-search", {'id_faculte':id},
+                    function (data, textStatus, jqXHR) {
+                        data.forEach(element => {
+                            $("#departement").append('<option>'+element["nom_complet"]+'</option>');
+                        });
+                    },
+                    "json"
+                );
+        }
+        $("form").submit(function (e) { 
+            e.preventDefault();
+            let formData=new FormData(this)
+            let dict={}
+            for(var i of formData.entries()){
+                dict[i[0]]=i[1];
+            }
+            console.log(dict);
+            $.ajax({
+                type: "POST",
+                url: "server/?etudiant_0-new",
+                data: dict,
+                dataType: "json",
+                success: function (response) {
+                    console.log(response);
+                }
+            });
+        });
     </script>
     <!-- <script src="owlcarousel/owl.carousel.js"></script>
     <script src="owlcarousel/owl.carousel.min.js"></script> -->

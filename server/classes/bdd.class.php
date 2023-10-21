@@ -42,7 +42,13 @@ class tables extends bdd{
         $sign=$sign."?";
         $sql = "INSERT INTO ".$this->table." (".$keys.") VALUES (".$sign.")";
         $exec=$this->connect()->prepare($sql)->execute($values);
-        return ["message"=>$this->table." Enregistre avec succes"];
+       
+        if ($exec==1) {
+            $message=$this->table." Enregistre avec succes";
+        } else {
+            $message=$this->table." Echec d'enregistrement";
+        }
+        return ["message"=>$message,"state"=>$exec];
     }
     function byId($id){
         $sql="SELECT * FROM ".$this->table." where id=:id";

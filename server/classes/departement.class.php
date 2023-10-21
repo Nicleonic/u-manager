@@ -23,7 +23,12 @@ if (isset($_GET[$departement->table."-delete"])) {
     $output=$departement->delete($_GET[$departement->table."-delete"]);
 }
 if (isset($_GET[$departement->table."-search"])) {
-    $output=$departement->search($_POST);
+    if (count($_POST)>0) {
+        $output=$departement->search($_POST);
+    }else{
+        $output=["message"=>"Donnees insuffisante"];
+    }
+    
 }
 
             
