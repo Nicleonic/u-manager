@@ -17,6 +17,10 @@ html{
     /* height: 4rem; */
     width: .8rem;
 }
+li::-webkit-scrollbar{
+    /* height: 4rem; */
+    width: .4rem;
+}
 *::-webkit-scrollbar-track{
     background: transparent;
 }
@@ -274,9 +278,8 @@ header{
     padding: 0;
     position: relative;
 }
-.student-info .head{
+/* .student-info .head{
     display: flex;
-    /* border: 2px solid red; */
 }
 .student-info .head .st-img{
     background-image: url("img/user.png");
@@ -328,15 +331,14 @@ header{
 }
 .st-matt .cont-infos{
   display: inline-block;
-}
+} */
 
 
 .container-st{
     border: none;
-    border-top: 1px solid black;
+    border-top: 2px solid rgb(163, 13, 13);
     width: 100%;
-    display: grid;
-    grid-template-columns: repeat(auto-fill,calc(100%/4));
+    
 }
 
 .content-group{

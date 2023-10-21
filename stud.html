@@ -16,13 +16,141 @@
 </head>
 <body >
     <style>
-       
+        .student-info{
+            border: 2px solid black;
+            position: relative;
+
+        }
+        .student-info .stud-header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 0;
+        }
+        .stud-header *{
+            border: 0px solid rebeccapurple;
+        }
+        .stud-header .first-id{
+            width: 80%;
+            border: 0px dashed blue;
+        }
+        .stud-header {
+            border: 0px solid rgb(161, 16, 0);
+        }
+        .first-id ul{
+            list-style: none;
+
+        }
+        .first-id ul li{
+            list-style: none;
+            font-size: 1.2rem;
+        }
+        .student-info .id-title{
+            font-size: 1.2rem;
+            font-weight: bold;
+            padding-left: 2rem;
+        }
+        .stud-header .photo{
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0;
+            margin: 0;
+            border: 0px solid violet;
+            height: auto;
+            width: 20%;
+            /* flex-direction: column;
+            justify-content: start;
+            align-items: start;
+            position: relative; */
+        }
+        div::-webkit-scrollbar{
+            height: .4rem;
+        }
+        .stud-header .photo .container-img{
+            height: 100%;
+            width: 100%;
+            position: relative;
+
+        }
+        .stud-header .photo .container-img {
+           position: relative;
+           display: flex;
+           flex-direction: column;
+            border: 1px dotted rgb(161, 16, 0);
+            height: 100%;
+            width: 100%;
+            overflow-x: auto;
+
+        }
+        .stud-header .photo .container-img .img{
+            overflow-x: auto;
+            height: 16rem;
+            width: 100%;
+            min-width: 12rem;
+            background-image: url(img/user.png);
+            background-position: center;
+            background-size: cover;
+        }
+        .stud-header .photo .container-img .bottom{
+            width: 100%;
+        }
+        .stud-header .photo .container-img .bottom ul{
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+        }
+        .stud-header .photo .container-img .bottom ul li{
+            list-style: none;
+        }
+        .container-st{
+            border: 0px solid saddlebrown;
+            display: flex;
+        }
+        .container-st .left{
+            border: 0px solid darkcyan;
+            width: 80%;
+        }
+        .container-st .right{
+            width: 20%;
+            border: 0px solid darkblue;
+        }
+        .container-st .right ul{
+            border: 0px solid darkcyan;
+            padding: 0;
+            margin: 0;
+            padding-left: auto;
+            padding-right: auto;
+            display: flex;
+            justify-content: space-around;
+
+        }
+        .container-st .right ul li{
+            list-style: none;
+            display: inline;
+  
+            
+        }
+        .container-st .left ul{
+            list-style: none;
+        }
+        .container-st .left ul li{
+            list-style: none;
+            font-size: 1.2rem;
+        }
+        .stud-header .first-id ul li span,
+        .container-st .left ul li span{
+            font-size: 1.2rem;
+            font-weight: bolder;
+        }
         
     </style>
     <header>
         <div class="head-content">
             <div class="title">
-                <h2>Aparitorat</h2>
+                <h2>Apparitorat</h2>
             </div>
             <div class="actions" onclick="window.open('find.html','_self')">
                 <button class="btn btn-log"><i class="fa-solid fa-arrow-left"></i></button>
@@ -35,156 +163,112 @@
     <section class="body-container">
      
         <div class="student-info">
-           <div class="head">
-                <div class="st-img">
+            <h2 class="id-title">Identités de l'Etudiant</h2>
+
+            <div class="stud-header ">
+                <!-- ids Student -->
+                <div class="first-id">
+                    <ul>
+                        <li>Nom      : <span>......</span></li>
+                        <li>Post-Nom : <span>......</span></li>
+                        <li>Prénom   : <span>......</span></li>
+                        <li>Sexe     : <span>......</span></li>
+                        <li>Matt.    : <span>......</span></li>
+                        <li>Promotion     : <span>......</span></li>
+                        <li>Département   : <span>......</span></li>
+                        <li>Faculté       : <span>......</span></li>
+                        <li>Téléphone       : <span>......</span></li>
+                    </ul>
 
                 </div>
-                <div class="st-name">
-                    <div class="cont-infos">
-                        <h3 class="lab">Noms : </h3>
-                        <h3 class="info"><span id="nom"></span> <span id="postnom"></span> <span id="prenom"></span></h3>
-                    </div>
-                    <div class="cont-infos">
-                        <h3 class="lab" >Sexe : </span> </h3>
-                        <h3 class="info" id="sexe">...........</h3>
-                    </div>
-                    <div class="cont-infos">
-                        <h3 class="lab">Promotion : </h3>
-                        <h3 class="info" id="promotion">...........</h3>
-                    </div>
-                    <div class="cont-infos">
-                        <h3 class="lab">Faculté  : </h3>
-                        <h3 class="info" id="faculte">...........</h3>
-                    </div>
-    
-                </div>
-                <div class="st-matt">
-                    <div class="cont-infos">
-                        <h3 class="lab">Matt : </h3>
-                        <h3 class="info" id="matricule">...........</h3>
+                <div class="photo h-100 mt-0 ml-0 border">
+                    <div class="container-img ">
+                        <div class="img">
+
+                        </div>
+                       
                     </div>
                 </div>
-                
+
             </div>
+            <h2 class="id-title">Autres infos sur l'Etudiant</h2>
+            <!-- <h2 class="id-title">Etudes universitaires antérieures</h2> -->
             <div class="container-st">
-                <div class="content-group">
-                    <h3 class="label">Lieu de naissance</h3>
-                    <h3 class="info" id="lnaissance">-</h3>
+                <div class="left">
+                    <ul>
+                        <li>Nom du Père     : <span>......</span></li>
+                        <li>Tél. du Père  : <span>......</span></li>
+
+                        <li>Nom de la Mère : <span>......</span></li>
+                        <li>Tél. de la Mère  : <span>......</span></li>
+
+                        <li>Pays d'origine     : <span>......</span></li>
+                        <li>Province d'origine    : <span>......</span></li>
+                        <li>Territoire d'origine     : <span>......</span></li>
+                        <li>Confession religieuse   : <span>......</span></li>
+                        <li>Langues parlée(s)       : <span>......</span></li>
+                        <li>Ville   : <span></span> </li>
+                        <li>Commune :  <span></span></li>
+                        <li>Quartier    :  <span></span></li>
+                        <li>Nom de l'école frequentée    :  <span></span></li>
+                        <li>Section faite    :  <span></span></li>
+                        <li>Année d'obtention du diplôme    :  <span></span></li>
+                        <li>Pourcentage du diplôme    :  <span></span></li>
+                        <li>Numéro du diplôme d'Etat    :  <span></span></li>
+                        <li>Activités professionnelles   :  <span></span></li>
+                        <li>Année académique    :  <span></span></li>
+                        <li>Etablissement    :  <span></span></li>
+                        <li>Promotion    :  <span></span></li>
+                        <li>Département    :  <span></span></li>
+                        <li>Faculté   :  <span></span></li>
+                        
+                    </ul>
                 </div>
-                <div class="content-group">
-                    <h3 class="label">Date de naissance</h3>
-                    <h3 class="info" id="dnaissance">-</h3>
-                </div>
-                <div class="content-group">
-                    <h3 class="label">Numero de Tel</h3>
-                    <h3 class="info" id="telephone">-</h3>
-                </div>
-                <div class="content-group">
-                    <h3 class="label">Nom du Pere</h3>
-                    <h3 class="info" id="pere_nom">-</h3>
-                </div>
-                <div class="content-group">
-                    <h3 class="label">Nom de la Mere</h3>
-                    <h3 class="info" id="mere_nom">-</h3>
-                </div>
-                <div class="content-group">
-                    <h3 class="label">Numero du Pere</h3>
-                    <h3 class="info" id="pere_tel">-</h3>
-                </div>
-                <div class="content-group">
-                    <h3 class="label">Numero de la Mere</h3>
-                    <h3 class="info" id="mere_tel">-</h3>
-                </div>
-                <div class="content-group">
-                    <h3 class="label">Pays d'origine</h3>
-                    <h3 class="info" id="pays_origine">-</h3>
-                </div>
-                <div class="content-group">
-                    <h3 class="label">Province d'origine</h3>
-                    <h3 class="info" id="province_origine">-</h3>
-                </div>
-                <div class="content-group">
-                    <h3 class="label">Territoire d'origine</h3>
-                    <h3 class="info" id="territoire_origine">-</h3>
-                </div>
-                <div class="content-group">
-                    <h3 class="label">Confession religieuse</h3>
-                    <h3 class="info" id="religion">-</h3>
-                </div>
-                <div class="content-group">
-                    <h3 class="label">Ville</h3>
-                    <h3 class="info" id="territoire_origine">-</h3>
+                <div class="right">
+                    <ul>
+                        <li class="tt" data-bs-placement="top" title="Valider">
+                            <button class="btn btn-success"> <i class="fa-solid fa-check"></i></button>
+                        </li>
+                        <li class="tt" data-bs-placement="top" title="Modifier">
+                            <button class="btn btn-primary"> <i class="fa-solid fa-edit"></i></button>
+                        </li>
+                        <li class="tt" data-bs-placement="top" title="Supprimer">
+                            <button class="btn btn-danger"> <i class="fa-solid fa-trash"></i></button>
+                        </li>
+                    </ul>
                 </div>
 
             </div>
-            <!-- Table -->
-            <!-- <table>
-                <tbody>
-                    <tr>
-                        <td>
-                            <div class="content-group">
-                                <h3 class="label">Date de naissance</h3>
-                                <h3 class="info">-</h3>
-                            </div>
-                        </td>
-                       
-                        <td>
-                            <div class="content-group">
-                                <h3 class="label">Date de naissance</h3>
-                                <h3 class="info">-</h3>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="content-group">
-                                <h3 class="label">Date de naissance</h3>
-                                <h3 class="info">-</h3>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="content-group">
-                                <h3 class="label">Date de naissance</h3>
-                                <h3 class="info">-</h3>
-                            </div>
-                        </td>
-                       
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="content-group">
-                                <h3 class="label">Date de naissance</h3>
-                                <h3 class="info">-</h3>
-                            </div>
-                        </td>
-                       
-                        <td>
-                            <div class="content-group">
-                                <h3 class="label">Date de naissance</h3>
-                                <h3 class="info">-</h3>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="content-group">
-                                <h3 class="label">Date de naissance</h3>
-                                <h3 class="info">-</h3>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="content-group">
-                                <h3 class="label">Date de naissance</h3>
-                                <h3 class="info">-</h3>
-                            </div>
-                        </td>
-                       
-                    </tr>
-                </tbody>
-            </table> -->
+            <h2 class="id-title">Documents requis</h2>
+            <div class="container-st">
+                <div class="left">
+                    <ul>
+                        <li>Attestation du diplôme     : <span>......</span></li>
+                        <li>Attestation de bonnes moeurses  : <span>......</span></li>
+                        <li>Attestation d'engagement     : <span>......</span></li>
+                        <li>Relevés (pour les anciens étudiants)  : <span>......</span></li>
+                    </ul>
+                </div>
+                <div class="right">
+                   
+                </div>
 
+            </div>
+
+            
 
         </div>
     
     </section>
     <script src="src/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script>
+        // toolTip
+        const tooltips =document.querySelectorAll('.tt')
+        tooltips.forEach(t => {
+          new bootstrap.Tooltip(t)
+        })
+        // toolTip end
         let req=window.location.search
         if (req.search("id=")) {
             let id=req.split("=")[1]
