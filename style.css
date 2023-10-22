@@ -1,14 +1,7 @@
 *{
     box-sizing: border-box;
 }
-:root{
-    /* --primary:rgba(27, 62, 70, 1); */
-    --primary: rgba(91, 87, 174);
-    --bglv:rgba(91, 87, 174);
-    --bglt:rgb(255, 120, 0);
-    --btnbg: rgb(37, 42, 106);
-    --secondary:rgb(235, 240, 245);
-}
+
 html{
     background: var(--secondary);
     border: 0px solid saddlebrown;
@@ -216,10 +209,7 @@ header{
     flex-direction: row;
 
 }
-/* .head-content > div{
-    padding: 0;
-    margin: 0;
-} */
+
 .body-container{
     background: var(--secondary);
     z-index: 1;
@@ -278,62 +268,6 @@ header{
     padding: 0;
     position: relative;
 }
-/* .student-info .head{
-    display: flex;
-}
-.student-info .head .st-img{
-    background-image: url("img/user.png");
-    background-size: cover;
-    width: calc(100%/4);
-    height: 12rem;
-    border: 0px solid darkcyan;
-    background-image: url("img/user.png")no-repeat;
-    background-position: center;
-    background-size: cover;
-}
-.st-name{
-    padding: 0 .5rem;
-    border: 0px solid saddlebrown;
-    width: calc(100%/2);
-}
-.st-name .cont-infos, .st-matt .cont-infos{
-    display: flex;
-}
-.st-name .cont-infos *, .st-matt .cont-infos *{
-    display: inline-block;
-    margin-bottom: 0;
-}
-.st-name .cont-infos .info, .st-matt .cont-infos .info{
-    margin-left: .4rem;
-    margin-bottom: 0;
-}
-.st-name .cont-infos h3, .st-matt .cont-infos h3{
-    padding: 0 ;
-}
-.cont-infos{
-    padding: 0;
-    display: flex;
-    align-items: center;
-    padding-top: 0;
-    padding-bottom: 0;
-}
-.cont-infos .lab{
-    font-weight: lighter;
-}
-.cont-infos h3 span{
-    font-weight: bolder;
-    color: #000000;
-}
-.st-matt{
-    padding: 0 .5rem;
-    width: calc(100%/4);
-    border: 0px solid royalblue;
-}
-.st-matt .cont-infos{
-  display: inline-block;
-} */
-
-
 .container-st{
     border: none;
     border-top: 2px solid rgb(163, 13, 13);
@@ -443,13 +377,8 @@ header{
     border: 0px solid  rgb(90, 18, 163);
 }
 .main .main-body{
+    border: 0px solid darkorange;
     padding: 5px;
-}
-/* container-b0x */
-.container{
-    /* background: linear-gradient(45deg, blueviolet, lightgreen); */
-    padding: 15px 6%;
-    padding-bottom: 100px;
 }
 .container-heading{
     text-align: center;

@@ -16,6 +16,197 @@
     <title>U-Manager Admin</title>
 </head>
 <body>
+    <style>
+        :root{
+            /* --primary:rgba(27, 62, 70, 1); */
+            --primary: rgba(91, 87, 174);
+            --bglv:rgba(91, 87, 174);
+            --bglt:rgb(255, 120, 0);
+            --btnbg: rgb(37, 42, 106);
+            --secondary:rgb(235, 240, 245);
+        }
+        .sidebar .side-list ul li {
+            /* border: 1px solid darkblue; */
+            width: 100%;
+            margin-left: 0;
+        }
+        .sidebar .side-list ul{
+            /* border: 2px solid chartreuse; */
+            padding-left: 0;
+
+        }
+        .faculte{
+            border: 2px solid black;
+            display: flex;
+            flex-direction: column;
+        }
+        .faculte .fac-head{
+            border: 0px solid darkcyan;
+            display: flex;
+
+        }
+        .fac-head .fac-h-title{
+            width: 80%;
+            display: flex;
+            justify-content: center;
+        }
+        .fac-head .fac-h-title h2{
+            color: var(--primary);
+        }
+        .fac-head .fac-h-control{
+            width: 20%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .fac-h-control > *{
+            list-style: none;
+        }
+        /* ------------- fac body ----------------- */
+        .faculte .fac-body{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid black;
+        }
+        .fac-body .fb-head{
+            margin-top: .5rem;
+            display: flex;
+            border: 0px dashed navy;
+        }
+        .fb-head .left{
+            width: 80%;
+            display: flex;
+            justify-content: left;
+        }
+        .fb-head .left .fac-name{
+            font-size: 1.2rem;
+            font-weight: bolder;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            padding-left: 1rem;
+            justify-content: center;
+        }
+        .fb-head .right{
+            width: 20%;
+            display: flex;
+            justify-content: center;
+            border: 0px solid cadetblue;
+            
+        }
+        .fb-head .right .control{
+            width: 50%;
+            border: 0px solid firebrick;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .fb-head .right .control > *{
+            list-style: none;
+            /* border: 2px solid red; */
+        }
+        .fb-body{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            border: 0px solid khaki;
+        }
+        .fb-body > *{
+            border: 0px dashed yellow;
+            padding-left: 1rem;
+        }
+        .fb-body .bottom ul{
+            border: 0px solid salmon;
+        }
+        .fb-body .bottom ul li{ 
+            border: 0px solid rgb(251, 25, 0);
+        }
+        .fb-body .bottom ul li ul{ 
+            padding-left: 0;
+            border: 0px solid rgb(34, 7, 4);
+            display: flex;
+        }
+        .bottom ul li ul li{
+            list-style: none;
+        }
+        .bottom ul li ul .deptitle{
+            width: 85%;
+            border: 0px solid rebeccapurple;
+        }
+        .bottom ul li ul .depcount{
+            width: 15%;
+            border: 0px solid rgb(40, 2, 79);
+        }
+        /* ------------- Departement UX config */
+        .departem{
+            border: 2px solid black;
+            display: flex;
+            flex-direction: column;
+        }
+        .departem .dep-head{
+            border: 0px solid darkcyan;
+            display: flex;
+
+        }
+        .dep-head .dh-title{
+            width: 80%;
+            display: flex;
+            justify-content: center;
+        }
+        .dep-head .dh-title h2{
+            color: var(--primary);
+        }
+        .dep-head .dh-control{
+            width: 20%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        /* ----------- dep body */
+        .dep-body .db-head{
+            margin-top: .5rem;
+            display: flex;
+            border: 0px dashed navy;
+        }
+        
+        .db-head .left{
+            width: 80%;
+            display: flex;
+            justify-content: left;
+        }
+        .db-head .left .dep-name{
+            font-size: 1.2rem;
+            font-weight: lighter;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            padding-left: 1rem;
+            justify-content: center;
+        }
+        .db-head .right{
+            width: 20%;
+            display: flex;
+            justify-content: center;
+            border: 0px solid cadetblue;
+            
+        }
+        .db-head .right .control{
+            width: 50%;
+            border: 0px solid firebrick;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .db-head .right .control > *{
+            list-style: none;
+            /* border: 2px solid red; */
+        }
+    </style>
 
     <!-- staff -->
     <div class="staff-container" id="staff_Display">
@@ -116,76 +307,23 @@
             </li>
             <li>
                 <a href="#">
-                    <i class="fa-solid fa-bars"></i>
-                    <span>Edit</span>
+                    <i class="fa-solid fa-th-list"></i>
+                    <span>Users List</span>
                 </a>
             </li>
             <li>
-                <a href="#">
-                    <i class="fa-solid fa-user"></i>
-                    <span>Edit</span>
+                <a href="#fac">
+                    <i class="fa-solid fa-server"></i>
+                    <span>Faculté</span>
                 </a>
             </li>
             <li>
-                <a href="#">
-                    <i class="fa-solid fa-user-tie"></i>
-                    <span>Edit</span>
+                <a href="#dep">
+                    <i class="fa-solid fa-folder-open"></i>
+                    <span>Département</span>
                 </a>
             </li>
-            <li>
-                <a href="#">
-                    <i class="fa-solid fa-book"></i>
-                    <span>Edit</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="fa-solid fa-user-secret"></i>
-                    <span>Edit</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="fa-solid fa-book"></i>
-                    <span>Edit</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="fa-solid fa-lock"></i>
-                    <span>Edit</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="fa-solid fa-clipboard-user"></i>
-                    <span>Edit</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="fa-solid fa-users"></i>
-                    <span>Edit</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="fa-solid fa-clipboard-user"></i>
-                    <span>Edit</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="fa-solid fa-clipboard-user"></i>
-                    <span>Edit</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="fa-solid fa-graduation-cap"></i>
-                    <span>Edit</span>
-                </a>
-            </li>
+          
 
         </ul>
        </div>
@@ -197,8 +335,8 @@
                 <i class="fa-solid fa-right-from-bracket"></i>
             </div>
         </div>
-        <div class="main-body">
-            <div class="container">
+        <div class="main-body ">
+            <div class="container  pb-3">
                 <!-- <h class="heading">DashBord | Admin</h> -->
                 <div class="box-container">
                     <div class="box">
@@ -224,36 +362,227 @@
                     <div class="box">
                         <h2 class="title">Students</h2>
                         <h2 class="subtitle">439 Students</h2>
+                    </div>                    
+                </div>
+            </div>
+            <!-- -------------- facultes container -->
+            <div class="faculte" id="fac">
+                <div class="fac-head">
+                    <div class="fac-h-title">
+                        <h2 class="">Facultés</h2>
                     </div>
-                    <div class="box">
-                        <h2 class="title">Students</h2>
-                        <h2 class="subtitle">439 Students</h2>
+                    <div class="fac-h-control">
+                        <li class="tt" data-bs-placement="top" title="Ajouter une Faculté">
+                            <button class="btn btn-log tt" id="modify" onclick="alert('fonctionnalité non disponible')" > <i class="fa-solid fa-plus"></i></button>
+                        </li>
                     </div>
-                    <div class="box">
-                        <h2 class="title">Students</h2>
-                        <h2 class="subtitle">439 Students</h2>
+                </div>
+                <div class="children">
+                    <!-- first fac -->
+                    <div class="fac-body">
+                        <div class="fb-head">
+                            <div class="left">
+                                <h2 class="fac-name">Faculté de Technologie</h2>
+                            </div>
+                            <div class="right">
+                               <div class="control">
+                                    <li class="tt" data-bs-placement="top" title="Ajouter Département">
+                                        <button class="btn btn-outline-primary btn-sm " id="modify" onclick="alert('fonctionnalité non disponible')" > <i class="fa-solid fa-plus"></i></button>
+                                    </li>
+                                    <li class="tt" data-bs-placement="top" title="Supprimer Faculté">
+                                        <button class="btn btn-outline-danger btn-sm " id="modify" onclick="alert('fonctionnalité non disponible')" > <i class="fa-solid fa-trash"></i></button>
+                                    </li>
+                               </div>
+                            </div>
+                        </div>
+                        <div class="fb-body">
+                            <div class="top">
+                                <h6>Départements</h6>
+                            </div>
+                            <div class="bottom">
+                                <ul>
+                                    <li>
+                                        <ul>
+                                            <li class="deptitle">Génie Informatique</li>
+                                            <li class="depcount">
+                                                <i class="fa-solid fa-users"></i>
+                                                <span>200</span>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <ul>
+                                            <li class="deptitle">Génie Informatique</li>
+                                            <li class="depcount">
+                                                <i class="fa-solid fa-users"></i>
+                                                <span>200</span>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <ul>
+                                            <li class="deptitle">Génie Informatique</li>
+                                            <li class="depcount">
+                                                <i class="fa-solid fa-users"></i>
+                                                <span>200</span>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <ul>
+                                            <li class="deptitle">Génie Informatique</li>
+                                            <li class="depcount">
+                                                <i class="fa-solid fa-users"></i>
+                                                <span>200</span>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <div class="box">
-                        <h2 class="title">Students</h2>
-                        <h2 class="subtitle">439 Students</h2>
-                    </div>
-                    <div class="box">
-                        <h2 class="title">Students</h2>
-                        <h2 class="subtitle">439 Students</h2>
-                    </div>
-                    <div class="box">
-                        <h2 class="title">Students</h2>
-                        <h2 class="subtitle">439 Students</h2>
-                    </div>
-                    <div class="box">
-                        <h2 class="title">Students</h2>
-                        <h2 class="subtitle">439 Students</h2>
+                    <!-- second fac -->
+                    <div class="fac-body">
+                        <div class="fb-head">
+                            <div class="left">
+                                <h2 class="fac-name">Faculté de Technologie</h2>
+                            </div>
+                            <div class="right">
+                               <div class="control">
+                                    <li class="tt" data-bs-placement="top" title="Ajouter Département">
+                                        <button class="btn btn-outline-primary btn-sm " id="modify" onclick="alert('fonctionnalité non disponible')" > <i class="fa-solid fa-plus"></i></button>
+                                    </li>
+                                    <li class="tt" data-bs-placement="top" title="Supprimer Faculté">
+                                        <button class="btn btn-outline-danger btn-sm " id="modify" onclick="alert('fonctionnalité non disponible')" > <i class="fa-solid fa-trash"></i></button>
+                                    </li>
+                               </div>
+                            </div>
+                        </div>
+                        <div class="fb-body">
+                            <div class="top">
+                                <h6>Départements</h6>
+                            </div>
+                            <div class="bottom">
+                                <ul>
+                                    <li>
+                                        <ul>
+                                            <li class="deptitle">Génie Informatique</li>
+                                            <li class="depcount">
+                                                <i class="fa-solid fa-users"></i>
+                                                <span>200</span>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <ul>
+                                            <li class="deptitle">Génie Informatique</li>
+                                            <li class="depcount">
+                                                <i class="fa-solid fa-users"></i>
+                                                <span>200</span>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <ul>
+                                            <li class="deptitle">Génie Informatique</li>
+                                            <li class="depcount">
+                                                <i class="fa-solid fa-users"></i>
+                                                <span>200</span>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <ul>
+                                            <li class="deptitle">Génie Informatique</li>
+                                            <li class="depcount">
+                                                <i class="fa-solid fa-users"></i>
+                                                <span>200</span>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+
+
+            <!-- -------------- departement container -->
+            <div class="departem mt-4" id="dep">
+                <div class="dep-head">
+                    <div class="dh-title">
+                        <h2 class="">Départements</h2>
+                    </div>
+                    <div class="dh-control">
+                    </div>
+                </div>
+                <!-- dep body -->
+                <div class="dep-body pb-2">
+                   <div class="dep-children">
+                    <div class="db-head">
+                        <div class="left">
+                            <h2 class="dep-name">Génie Informatique</h2>
+                        </div>
+                        <div class="right">
+                           <div class="control">
+                                <li class="tt" data-bs-placement="top" title="Ajouter Département">
+                                    <button class="btn btn-outline-primary btn-sm " id="modify" onclick="alert('fonctionnalité non disponible')" > <i class="fa-solid fa-edit"></i></button>
+                                </li>
+                                <li class="tt" data-bs-placement="top" title="Supprimer Faculté">
+                                    <button class="btn btn-outline-danger btn-sm " id="modify" onclick="alert('fonctionnalité non disponible')" > <i class="fa-solid fa-trash"></i></button>
+                                </li>
+                           </div>
+                        </div>
+                    </div>
+                    <!-- dep second child -->
+                    <div class="db-head">
+                        <div class="left">
+                            <h2 class="dep-name">Génie Electromécanique</h2>
+                        </div>
+                        <div class="right">
+                           <div class="control">
+                                <li class="tt" data-bs-placement="top" title="Ajouter Département">
+                                    <button class="btn btn-outline-primary btn-sm " id="modify" onclick="alert('fonctionnalité non disponible')" > <i class="fa-solid fa-edit"></i></button>
+                                </li>
+                                <li class="tt" data-bs-placement="top" title="Supprimer Faculté">
+                                    <button class="btn btn-outline-danger btn-sm " id="modify" onclick="alert('fonctionnalité non disponible')" > <i class="fa-solid fa-trash"></i></button>
+                                </li>
+                           </div>
+                        </div>
+                    </div>
+                    <!-- third -->
+                    <div class="db-head">
+                        <div class="left">
+                            <h2 class="dep-name">Gestion Informatique</h2>
+                        </div>
+                        <div class="right">
+                           <div class="control">
+                                <li class="tt" data-bs-placement="top" title="Ajouter Département">
+                                    <button class="btn btn-outline-primary btn-sm " id="modify" onclick="alert('fonctionnalité non disponible')" > <i class="fa-solid fa-edit"></i></button>
+                                </li>
+                                <li class="tt" data-bs-placement="top" title="Supprimer Faculté">
+                                    <button class="btn btn-outline-danger btn-sm " id="modify" onclick="alert('fonctionnalité non disponible')" > <i class="fa-solid fa-trash"></i></button>
+                                </li>
+                           </div>
+                        </div>
+                    </div>
+                   </div>
+                </div>
+
+            </div>
         </div>
     </div>
+
+    <!-- ------------- scripts -->
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script>
+        // toolTip
+        const tooltips =document.querySelectorAll('.tt')
+        tooltips.forEach(t => {
+          new bootstrap.Tooltip(t)
+        })
+        // ------------------------------
         let staffDisplay = document.getElementById('staff_Display');
         let staffCancel = document.getElementById('staff_Cancel');
         let staffValidation = document.getElementById('staff_Validation');

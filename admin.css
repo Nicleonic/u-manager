@@ -1,12 +1,15 @@
-/* ----------------------------------Adnin page------------------------------- */
+/* ----------------------------------Admin page------------------------------- */
 .staff-container.active{
     visibility: visible;
     /* transition: all ease-in-out 1s; */
-    display: block;
     transition: all ease-in 3s;
     transform-origin: center;
 }
 .staff-container{
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
     transition: .9s;
     transform-origin: center;
     visibility: hidden;
