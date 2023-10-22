@@ -146,7 +146,14 @@
             font-size: 1.2rem;
             font-weight: bolder;
         }
-        
+        li{
+            display: grid;
+            grid-template-columns: 20% auto;
+            /* gap: 100px; */
+        }
+        li>span{
+            border-bottom: solid 1px black;
+        }
     </style>
     <!-- <odification Etudiant -->
         
@@ -385,39 +392,47 @@
     
     <section class="body-container">
      
-        <div class="student-info">
-            <h2 class="id-title">Identités de l'Etudiant</h2>
+        <div class="student-info" style="border: none;">
+            
 
-            <div class="stud-header ">
-                <!-- ids Student -->
-                <div class="first-id">
-                    <ul>
-                        <li>Nom      : <span>......</span></li>
-                        <li>Post-Nom : <span>......</span></li>
-                        <li>Prénom   : <span>......</span></li>
-                        <li>Sexe     : <span>......</span></li>
-                        <li>Matt.    : <span>......</span></li>
-                        <li>Promotion     : <span>......</span></li>
-                        <li>Département   : <span>......</span></li>
-                        <li>Faculté       : <span>......</span></li>
-                        <li>Téléphone       : <span>......</span></li>
-                    </ul>
-
-                </div>
-                <div class="photo h-100 mt-0 ml-0 border">
-                    <div class="container-img ">
+            <div class="stud-header " style="display: flex;align-items:flex-start;border: solid blue 0px;">
+                <div class="photo">
+                    <div class="container-img " style="border: none;display: grid; gap: 10px;">
                         <div class="img">
 
                         </div>
-                       
+                        <div class="right" >
+                            <ul style="display: flex; gap: 5%;">
+                                <!-- <li class="tt" data-bs-placement="top" title="Valider"> -->
+                                    <button class="btn btn-success" id="valide"> <i class="fa-solid fa-check"></i></button>
+                                <!-- </li> -->
+                                <!-- <li class="tt" data-bs-placement="top" title="Modifier"> -->
+                                    <button class="btn btn-primary" id="modify" onclick="alert('fonctionnalité non disponible')"> <i class="fa-solid fa-edit"></i></button>
+                                <!-- </li> -->
+                                <!-- <li class="tt" data-bs-placement="top" title="Supprimer"> -->
+                                    <button class="btn btn-danger" id="del"> <i class="fa-solid fa-trash"></i></button>
+                                <!-- </li> -->
+                            </ul>
+                        </div>
                     </div>
+                    
                 </div>
+                <!-- ids Student -->
+                <div class="first-id">
+                    <h2 class="id-title">Identités de l'Etudiant</h2>
+                    <ul>
+                        <li>Nom      : <span id="nom">......</span></li>
+                        <li>Post-Nom : <span id="postnom">......</span></li>
+                        <li>Prénom   : <span id="prenom">......</span></li>
+                        <li>Sexe     : <span id="sexe">......</span></li>
+                        <li>Matt.    : <span id="matricule">......</span></li>
+                        <li>Promotion     : <span id="promotion">......</span></li>
+                        <li>Département   : <span id="departement">......</span></li>
+                        <li>Faculté       : <span id="">......</span></li>
+                        <li>Téléphone       : <span id="telephone">......</span></li>
+                    </ul>
+                    <h2 class="id-title">Autres infos sur l'Etudiant</h2>
 
-            </div>
-            <h2 class="id-title">Autres infos sur l'Etudiant</h2>
-            <!-- <h2 class="id-title">Etudes universitaires antérieures</h2> -->
-            <div class="container-st">
-                <div class="left">
                     <ul>
                         <li>Nom du Père     : <span>......</span></li>
                         <li>Tél. du Père  : <span>......</span></li>
@@ -453,7 +468,7 @@
                             <button class="btn btn-success"> <i class="fa-solid fa-check"></i></button>
                         </li>
                         <li class="tt" data-bs-placement="top" title="Modifier">
-                            <button class="btn btn-primary" id="st_zeroM"> <i class="fa-solid fa-edit"></i></button>
+                            <button class="btn btn-primary"> <i class="fa-solid fa-edit"></i></button>
                         </li>
                         <li class="tt" data-bs-placement="top" title="Supprimer">
                             <button class="btn btn-danger"> <i class="fa-solid fa-trash"></i></button>
@@ -472,9 +487,7 @@
                         <li>Relevés (pour les anciens étudiants)  : <span>......</span></li>
                     </ul>
                 </div>
-                <div class="right">
-                   
-                </div>
+                
 
             </div>
 
@@ -507,11 +520,14 @@
         })
         // toolTip end
         let req=window.location.search
+        let ID;
         if (req.search("id=")) {
             let id=req.split("=")[1]
+
             console.log(id);
             $.get("server/", {"etudiant_0-byId":id},
                 function (data, textStatus, jqXHR) {
+                    data=data.data
                     if (data.length>0) {
                         data.forEach(element => {
                             console.log(element);
@@ -533,6 +549,15 @@
         }else{
             window.open("find.html","_self")
         }
+        $("#valide").click(function (e) { 
+            e.preventDefault();
+            $.post("server/?etudiant_1-new", {matricule:Date.now(),id:req.split("=")[1],departement:$("#departement").text(),promotion:$("#promotion").text(),},
+                function (data, textStatus, jqXHR) {
+                    alert(data.message)
+                },
+                "json"
+            );
+        });
         // console.log(window.location.search.search("id="));
     </script>
 </body>
