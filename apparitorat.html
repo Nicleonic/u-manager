@@ -293,17 +293,17 @@
         });
         $.get("server/", {"faculte-all":""},
             function (data, textStatus, jqXHR) {
-                data.data.forEach(element => {
+                data.forEach(element => {
                     $("#faculte").append('<option value='+element["id"]+'>'+element["nom_complet"]+'</option>');
                 });
                 
-                setDepartement(data.data[0]["id"])
+                setDepartement(data[0]["id"])
             },
             "json"
         );
         $.getJSON("server/", {"promotion-all":""},
             function (data, textStatus, jqXHR) {
-                data.data.forEach(element => {
+                data.forEach(element => {
                     $("#promotion").append('<option value="'+element["id"]+'">'+element["nom_complet"]+'</option>');
                 })
             }
@@ -312,7 +312,7 @@
             $("#departement").html("");
             $.post("server/?departement-search", {'id_faculte':id},
                     function (data, textStatus, jqXHR) {
-                        data.data.forEach(element => {
+                        data.forEach(element => {
                             $("#departement").append('<option value="'+element["id"]+'">'+element["nom_complet"]+'</option>');
                         });
                     },

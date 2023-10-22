@@ -20,19 +20,18 @@
         <div class="title">
           <h2 id="title">Etudiants Inscrits</h2>
         </div>
-        <div class="actions" style="align-items: stretch; gap: 5%;">
-          <!-- <form class=" form-group" action=""> -->
-            <input type="text" class="form-control " id="search" placeholder="Find student">
-            <!-- <select class="form-select form-select-sm text-center w-25  border-none" name="fac">
+        <div class="actions">
+          <form class="find form-group border-none" action="">
+            <input type="text" class="form-control  border-none" id="search" placeholder="Find student">
+            <select class="form-select form-select-sm text-center w-25  border-none" name="fac">
               <option value="all">All</option>
               <option value="FTSI">FTSI</option>
               <option value="FTHEO">FTHEO</option>
               <option value="FASGEC">FASGEC</option>
-            </select> -->
-          <!-- </form> -->
-          <a href="apparitorat.html" class="btn btn-log"><i class="fa-solid fa-arrow-left"></i></a>
-
+            </select>
+          </form>
         </div>
+        <a href="apparitorat.html" class="btn btn-log"><i class="fa-solid fa-arrow-left"></i></a>
     </div>
   </header>
   <section class="containerFind ">
@@ -54,9 +53,8 @@
       $.post(url, reqData,
         function (data, textStatus, jqXHR) {
           console.log(data);
-          // data.data.reverse();
-          $("#list").html("");
-          data.data.reverse().forEach(e => {
+          data.reverse();
+          data.forEach(e => {
             $("#list").append(
               `
                 <li class="student " onclick="oneStud(`+e.id+`)">
@@ -77,9 +75,9 @@
       );
   }
   loadList({},"server/?etudiant_0-all");
-  $("#search").keyup(function (e) { 
-    console.log($(this).val());
-    loadList({"all_column":$(this).val()},"server/?etudiant_0-search")
+  $("#search").keydown(function (e) { 
+    $("#list").html("");
+    loadList({"nom":$(this).val()},"server/?etudiant_0-search")
   });
   function oneStud(id){
     window.open("stud.html?id="+id,"_self")
