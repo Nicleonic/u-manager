@@ -79,10 +79,6 @@
             border: 0px solid violet;
             height: auto;
             width: 20%;
-            /* flex-direction: column;
-            justify-content: start;
-            align-items: start;
-            position: relative; */
         }
         div::-webkit-scrollbar{
             height: .4rem;
@@ -171,7 +167,93 @@
         li>span{
             border-bottom: solid 0px black;
         }
+        /* ----------------------------- valide student ------------- */
+        .st-valide{
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 105;
+            position: fixed;
+            backdrop-filter: blur(10px);
+            height: 100vh;
+            max-height: 100vh;
+            width: 100%;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            visibility: hidden;
+            transition: .5s ease;
+        }
+        .st-valide.active{
+            visibility: visible;
+            transition: all ease-in .5s;
+        }
+        .st-valide .container{
+            border: 0px solid darkblue;
+            background: rgba(255, 255, 255, 0.922);
+            z-index: 3;
+            height: auto;
+            min-height: 50vh;
+            height: auto;
+            width: 500px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 8px rgba(0,0,0,0.4) ;
+            padding: 30px;
+            border-radius: 10px;
+            padding: 1rem  2%;
+            transform-origin: center;
+        }
     </style>
+
+    <!-- ------------------------  VALIDE Student start -->
+    <div class="st-valide" id="val_Display">
+        <div class="container">
+            <div class="cancel_btn " style="display: flex;justify-content: center;cursor: pointer;" onclick={removeValDisplay()} id="val_Cancel">
+                <span><i class="fas fa-xmark"></i></span>
+            </div>
+            <div class="staff-title" style="display: flex;justify-content: center;">
+                <h2 style="font-size: 1.2rem;font-weight: lighter;">Valider Etudiant</h2>
+            </div>
+            <div class="staff-form">
+                <form action="">
+                    <div class="form-group " style="display: flex;flex-direction: column;">
+                        <label for="" class="form-label mb-0">Promotion</label>
+                        <select class="form-select form-select-sm mb-2" >
+                            <option  selected value="1">FSQ</option>
+                            <option value="2">FATSIC</option>
+                            <option value="3">FATSIC</option>
+                            <option value="4">FATSIC</option>
+                        </select>
+                        <label for="" class="form-label mb-0">Département</label>
+                        <select class="form-select form-select-sm mb-2" >
+                            <option  selected value="1">FSQ</option>
+                            <option value="2">FATSIC</option>
+                            <option value="3">FATSIC</option>
+                            <option value="4">FATSIC</option>
+                        </select>
+                        <label for="" class="form-label mb-0">Faculté</label>
+                        <select class="form-select form-select-sm mb-2" >
+                            <option  selected value="1">FSQ</option>
+                            <option value="2">FATSIC</option>
+                            <option value="3">FATSIC</option>
+                            <option value="4">FATSIC</option>
+                        </select>
+                        
+                    </div>
+                    <div class="validation-controls" style="display: flex;justify-content: center;">
+                        <button id="st_valider" class=" btn btn-log w-50" type="submit" onclick={removeValDisplay()} style="color: white;">Enregistrer</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+     <!-- ------------------------- VALIDE Student end --> 
+
+
     <header>
         <div class="head-content">
             <div class="title">
@@ -199,13 +281,13 @@
                         <div class="right" >
                             <ul style="display: flex; gap: 5%;">
                                 <!-- <li class="tt" data-bs-placement="top" title="Valider"> -->
-                                    <button class="btn btn-success" id="valide"> <i class="fa-solid fa-check"></i></button>
+                                    <button class="btn btn-success tt" id="valide" data-bs-placement="top" title="Valider"> <i class="fa-solid fa-check"></i></button>
                                 <!-- </li> -->
                                 <!-- <li class="tt" data-bs-placement="top" title="Modifier"> -->
-                                    <button class="btn btn-primary" id="modify" onclick="alert('fonctionnalité non disponible')"> <i class="fa-solid fa-edit"></i></button>
+                                    <button class="btn btn-primary tt" id="modify" onclick="alert('fonctionnalité non disponible')" data-bs-placement="top" title="Modifier"> <i class="fa-solid fa-edit"></i></button>
                                 <!-- </li> -->
                                 <!-- <li class="tt" data-bs-placement="top" title="Supprimer"> -->
-                                    <button class="btn btn-danger" id="del"> <i class="fa-solid fa-trash"></i></button>
+                                    <button class="btn btn-danger tt" id="del" data-bs-placement="top" title="Supprimer"> <i class="fa-solid fa-trash"></i></button>
                                 <!-- </li> -->
                             </ul>
                         </div>
@@ -254,7 +336,6 @@
                         <li>Promotion    :  <span></span></li>
                         <li>Département    :  <span></span></li>
                         <li>Faculté   :  <span></span></li>
-                        
                     </ul>
                     <h2 class="id-title">Documents requis</h2>
                     <ul>
@@ -276,6 +357,17 @@
     <script src="src/jquery.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script>
+        // student valid
+        let valDisplay =document.getElementById('val_Display')
+        let valBtn = document.getElementById('valide');
+
+        valBtn.addEventListener('click', ()=>{
+            valDisplay.classList.add('active');
+        })
+        function removeValDisplay(){
+            valDisplay.classList.remove("active");
+        }
+
         // toolTip
         const tooltips =document.querySelectorAll('.tt')
         tooltips.forEach(t => {
@@ -312,7 +404,7 @@
         }else{
             window.open("find.html","_self")
         }
-        $("#valide").click(function (e) { 
+        $("#st_valider").click(function (e) { 
             e.preventDefault();
             $.post("server/?etudiant_1-new", {matricule:Date.now()/10000000,id:req.split("=")[1],departement:$("#departement").text(),promotion:$("#promotion").text(),},
                 function (data, textStatus, jqXHR) {
@@ -321,7 +413,7 @@
                 "json"
             );
         });
-        // console.log(window.location.search.search("id="));
+        console.log(window.location.search.search("id="));
     </script>
 </body>
 </html>
