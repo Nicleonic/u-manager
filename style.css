@@ -1,6 +1,14 @@
 *{
     box-sizing: border-box;
 }
+:root{
+    /* --primary:rgba(27, 62, 70, 1); */
+    --primary: rgba(91, 87, 174);
+    --bglv:rgba(91, 87, 174);
+    --bglt:rgb(255, 120, 0);
+    --btnbg: rgb(37, 42, 106);
+    --secondary:rgb(235, 240, 245);
+}
 
 html{
     background: var(--secondary);
@@ -68,12 +76,6 @@ header{
     align-items: center;
     width: 100%;
     z-index: 2;
-}
-.icon{
-    background: red;
-    padding: 1px 100px;
-    border-radius: 100%;
-    display: none;
 }
 .body{
     margin-top: 7.5rem;

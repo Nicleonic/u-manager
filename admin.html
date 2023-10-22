@@ -5,8 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- style -->
-    <link rel="stylesheet" href="admin.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="admin.css">
+
     <!-- bootstrap -->
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
     <!-- fontAwesome -->
@@ -206,41 +207,118 @@
             list-style: none;
             /* border: 2px solid red; */
         }
+        /* -------------------------------------------------------- Users List config UI */
+        .usersList{
+            border: 2px solid black;
+            display: flex;
+            flex-direction: column;
+        }
+        .usersList .dep-head{
+            border: 0px solid darkcyan;
+            display: flex;
+
+        }
+        .dep-head .dh-title{
+            width: 80%;
+            display: flex;
+            justify-content: center;
+        }
+        .dep-head .dh-title h2{
+            color: var(--primary);
+        }
+        .dep-head .dh-control{
+            width: 20%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+         /* ----------- usList body */
+         .usList-body .uLb-head{
+            margin-top: .5rem;
+            display: flex;
+        }
+        
+        .uLb-head .left{
+            width: 60%;
+            display: flex;
+            justify-content: left;
+        }
+        .uLb-head .left .user-names{
+            font-size: 1.2rem;
+            font-weight: lighter;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            padding-left: 1rem;
+            justify-content: center;
+        }
+        .uLb-head .grade{
+            width: 20%;
+            display: flex;
+            justify-content: center;
+            border: 0px solid cadetblue;
+        }
+        .uLb-head .grade .user-grade{
+            font-size: 1.2rem;
+            font-weight: lighter;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            padding-left: 1rem;
+            justify-content: center;
+        }
+        .uLb-head .right{
+            width: 20%;
+            display: flex;
+            justify-content: center;
+            border: 0px solid cadetblue;
+            
+        }
+        .uLb-head .right .control{
+            width: 50%;
+            /* border: 3px solid firebrick; */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .uLb-head .right .control > *{
+            list-style: none;
+            /* border: 2px solid red; */
+        }
     </style>
 
     <!-- staff -->
     <div class="staff-container" id="staff_Display">
-        <div class="container">
+        <div class="container" style="height: auto;">
             <div class="cancel_btn" onclick={removeStaffDisplay()} id="staff_Cancel">
                 <span><i class="fas fa-xmark"></i></span>
             </div>
             <div class="staff-title">
-                <h2>staff crea</h2>
+                <h2>Ajouter un nouveau Staff</h2>
             </div>
-            <div class="staff-form">
+            <div class="staff-form" style="height: auto;">
                 <form action="">
-                    <div class="form-group">
-                        <label for=" ">Identifiant</label>
+                    <div class="form-group  pb-0" style="height: 280px;">
+                        <label for=" " >Nom</label>
+                        <input type="text" class="form-control" name=" " id=" " required placeholder="" >    
+                        <label for=" ">Post-Nom</label>
                         <input type="text" class="form-control" name=" " id=" " placeholder="" >    
-                        <label for=" ">Identifiant</label>
-                        <input type="text" class="form-control" name=" " id=" " placeholder="" >    
-                        <label for="passwordA">Mot de Pass</label>
+                        <label for="passwordA">Prénom</label>
                         <input type="password" class="form-control" name=" " id=" " placeholder >
-                        <label for=" ">Identifiant</label>
-                        <input type="text" class="form-control" name=" " id=" " placeholder="" >    
-                        <label for=" ">Mot de Pass</label>
-                        <input type="password" class="form-control" name=" " id=" " placeholder >
-                        <label for=" ">Identifiant</label>
-                        <input type="text" class="form-control" name=" " id=" " placeholder="" >    
-                        <label for=" ">Mot de Pass</label>
-                        <input type="password" class="form-control" name=" " id=" " placeholder >
-                        <label for=" ">Identifiant</label>
-                        <input type="text" class="form-control" name=" " id=" " placeholder="" >    
-                        <label for=" ">Mot de Pass</label>
-                        <input type="password" class="form-control" name=" " id=" " placeholder >
+                        <div class="form-group i-group">
+                            <label for="" class="form-label">Grade</label>
+                            <select class="form-select form-control" name="sexe" >
+                              <option  selected value="app">Apparitaire</option>
+                              <option value="admin">Admin</option>
+                            </select>
+                        </div>
                     </div>
                     <div class="validation-controls">
-                        <button id="staff_validation" class=" btn btn-log w-50" type="submit" onclick={removeStaffDisplay()} style="color: white;">Connexion</button>
+                        <button id="staff_validation" class=" btn btn-log w-50" type="submit" onclick={remove.StaffDisplay()} style="color: white;">Connexion</button>
                     </div>
                 </form>
             </div>
@@ -299,18 +377,7 @@
                     <span>Staff</span>
                 </a>
             </li>
-            <li id="admin_Add">
-                <a href="#">
-                    <i class="fa-solid fa-user-secret"></i>
-                    <span>Admin</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="fa-solid fa-th-list"></i>
-                    <span>Users List</span>
-                </a>
-            </li>
+           
             <li>
                 <a href="#fac">
                     <i class="fa-solid fa-server"></i>
@@ -321,6 +388,12 @@
                 <a href="#dep">
                     <i class="fa-solid fa-folder-open"></i>
                     <span>Département</span>
+                </a>
+            </li>
+            <li>
+                <a href="#userList">
+                    <i class="fa-solid fa-th-list"></i>
+                    <span>Users List</span>
                 </a>
             </li>
           
@@ -526,10 +599,10 @@
                         </div>
                         <div class="right">
                            <div class="control">
-                                <li class="tt" data-bs-placement="top" title="Ajouter Département">
+                                <li class="tt" data-bs-placement="top" title="Modifier Département">
                                     <button class="btn btn-outline-primary btn-sm " id="modify" onclick="alert('fonctionnalité non disponible')" > <i class="fa-solid fa-edit"></i></button>
                                 </li>
-                                <li class="tt" data-bs-placement="top" title="Supprimer Faculté">
+                                <li class="tt" data-bs-placement="top" title="Supprimer Département">
                                     <button class="btn btn-outline-danger btn-sm " id="modify" onclick="alert('fonctionnalité non disponible')" > <i class="fa-solid fa-trash"></i></button>
                                 </li>
                            </div>
@@ -542,10 +615,10 @@
                         </div>
                         <div class="right">
                            <div class="control">
-                                <li class="tt" data-bs-placement="top" title="Ajouter Département">
+                                <li class="tt" data-bs-placement="top" title="Modifier Département">
                                     <button class="btn btn-outline-primary btn-sm " id="modify" onclick="alert('fonctionnalité non disponible')" > <i class="fa-solid fa-edit"></i></button>
                                 </li>
-                                <li class="tt" data-bs-placement="top" title="Supprimer Faculté">
+                                <li class="tt" data-bs-placement="top" title="Supprimer Département">
                                     <button class="btn btn-outline-danger btn-sm " id="modify" onclick="alert('fonctionnalité non disponible')" > <i class="fa-solid fa-trash"></i></button>
                                 </li>
                            </div>
@@ -558,10 +631,10 @@
                         </div>
                         <div class="right">
                            <div class="control">
-                                <li class="tt" data-bs-placement="top" title="Ajouter Département">
+                                <li class="tt" data-bs-placement="top" title="Modifier Département">
                                     <button class="btn btn-outline-primary btn-sm " id="modify" onclick="alert('fonctionnalité non disponible')" > <i class="fa-solid fa-edit"></i></button>
                                 </li>
-                                <li class="tt" data-bs-placement="top" title="Supprimer Faculté">
+                                <li class="tt" data-bs-placement="top" title="Supprimer Département">
                                     <button class="btn btn-outline-danger btn-sm " id="modify" onclick="alert('fonctionnalité non disponible')" > <i class="fa-solid fa-trash"></i></button>
                                 </li>
                            </div>
@@ -571,6 +644,90 @@
                 </div>
 
             </div>
+
+
+            <!-- ----------------- Users List -->
+            <div class="usersList mt-4" id="userList">
+                <div class="dep-head">
+                    <div class="dh-title">
+                        <h2 class="">Liste des Utilisateurs</h2>
+                    </div>
+                    <div class="dh-control">
+                    </div>
+                </div>
+                <!-- usList body -->
+                <div class="usList-body pb-2">
+                    <div class="usList-children">
+                        <!-- ------------------------------------------------------------------ user start-->
+                        <div class="uLb-head">
+                            <div class="left">
+                                <h2 class="user-names">Frank</h2>
+                            </div>
+                        <div class="grade">
+                            <h2 class="user-grade">Apparitaire</h2>
+                        </div>
+                        <div class="right">
+                            <div class="control">
+                                <li class="tt" data-bs-placement="top" title="Modifier Utilisateur">
+                                    <button class="btn btn-outline-primary btn-sm " id="modify" onclick="alert('fonctionnalité non disponible')" > <i class="fa-solid fa-edit"></i></button>
+                                </li>
+                                <li class="tt" data-bs-placement="top" title="Supprimer Utilisateur">
+                                    <button class="btn btn-outline-danger btn-sm " id="modify" onclick="alert('fonctionnalité non disponible')" > <i class="fa-solid fa-trash"></i></button>
+                                </li>
+                            </div>
+                        </div>
+                        </div>
+                        <!-- ------------------------------------------------------------------ user end-->
+
+                     <!-- usList second child -->
+                      <!-- ------------------------------------------------------------------ user start-->
+                      <div class="uLb-head">
+                        <div class="left">
+                            <h2 class="user-names">Frank</h2>
+                        </div>
+                    <div class="grade">
+                        <h2 class="user-grade">Apparitaire</h2>
+                    </div>
+                    <div class="right">
+                        <div class="control">
+                            <li class="tt" data-bs-placement="top" title="Modifier Utilisateur">
+                                <button class="btn btn-outline-primary btn-sm " id="modify" onclick="alert('fonctionnalité non disponible')" > <i class="fa-solid fa-edit"></i></button>
+                            </li>
+                            <li class="tt" data-bs-placement="top" title="Supprimer Utilisateur">
+                                <button class="btn btn-outline-danger btn-sm " id="modify" onclick="alert('fonctionnalité non disponible')" > <i class="fa-solid fa-trash"></i></button>
+                            </li>
+                        </div>
+                    </div>
+                    </div>
+                    <!-- ------------------------------------------------------------------ user end-->
+                    
+                     <!-- third -->
+                      <!-- ------------------------------------------------------------------ user start-->
+                      <div class="uLb-head">
+                        <div class="left">
+                            <h2 class="user-names">Frank</h2>
+                        </div>
+                    <div class="grade">
+                        <h2 class="user-grade">Apparitaire</h2>
+                    </div>
+                    <div class="right">
+                        <div class="control">
+                            <li class="tt" data-bs-placement="top" title="Modifier Utilisateur">
+                                <button class="btn btn-outline-primary btn-sm " id="modify" onclick="alert('fonctionnalité non disponible')" > <i class="fa-solid fa-edit"></i></button>
+                            </li>
+                            <li class="tt" data-bs-placement="top" title="Supprimer Utilisateur">
+                                <button class="btn btn-outline-danger btn-sm " id="modify" onclick="alert('fonctionnalité non disponible')" > <i class="fa-solid fa-trash"></i></button>
+                            </li>
+                        </div>
+                    </div>
+                    </div>
+                    <!-- ------------------------------------------------------------------ user end-->
+                    
+                    </div>
+                 </div>
+
+            </div>
+
         </div>
     </div>
 
