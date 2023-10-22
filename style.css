@@ -547,4 +547,28 @@ header{
         padding: 5px 25px 15px 25px;
         border-radius: 5px;
     }
+   
+   
+}
+@media (max-width: 500px){
+    body::before{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        content: "The System require a big Screen";
+        color: red;
+        font-size: 5rem;
+        text-align: center;
+        height: 100vh;
+        position: absolute;
+        z-index: 999;
+        backdrop-filter: blur(10px);
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        
+
+    }
 }
