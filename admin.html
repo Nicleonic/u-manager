@@ -16,126 +16,6 @@
     <title>U-Manager Admin</title>
 </head>
 <body>
-    <style>
-        .sidebar ul li a{
-            text-decoration: none;
-            color: #ffff;
-            padding: 0 10px;
-            /* border: 2px solid darkblue; */
-        }
-        .faculte{
-            width: 100%;
-            border: 2px solid rgb(0, 0, 0);
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 2rem;
-        }
-        .faculte .head{
-            margin-bottom: 2rem;
-            display: flex;
-        }
-        .faculte .head .left{
-            width: 80%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .faculte .head .right{
-            width: 20%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .faculte .head .right li{
-            list-style: none;
-        }
-        .faculte .head .left .title{
-            font-size: 2rem;
-            font-weight: bold;
-            width: 100%;
-            text-align: center;
-            text-transform: uppercase;
-        }
-      
-        .faculte .children{
-            display: flex;
-            flex-direction: column;
-            border: 0px solid chartreuse;
-        }
-        .children .card-ch{
-            border: 0px solid darkgreen;
-        }
-        .children .card-ch > h2{
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            font-weight: bold;
-        }
-        .card-ch .controls{
-            display: flex;
-            border: 0px solid darkgoldenrod;
-            width: 100%;
-        }
-        .card-ch .controls .left{
-            width: 80%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .card-ch .controls .left > h2{
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            font-weight: bold;
-        }
-        .card-ch .controls .right{
-            width: 20%;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-        }
-        .card-ch .controls .right li{
-            list-style: none;
-        }
-        .card-ch .deps{
-            border: 0px dotted orangered;
-            display: flex;
-            flex-direction: column;
-        }
-        .card-ch .deps .dep-title{
-            font-size: 1rem;
-            font-weight: bolder;
-        }
-        .card-ch .deps{
-            border-bottom: 1px solid black;
-            /* margin-bottom: 1rem; */
-        }
-        .card-ch .deps .d-one{
-            margin-bottom: .4rem;
-            border: 0px dashed darkcyan;
-            border-top: 1px solid black;
-            width: 100%;
-            display: flex;
-        }
-
-        .card-ch .deps .d-one .dep-title{
-            width: 80%;
-            border: 0px saddlebrown dotted;
-        }
-        .card-ch .deps .d-one .dep-title > h2{
-           font-size: 1.2rem;
-           padding-left: 1rem;
-        }
-        .card-ch .deps .d-one .controls{
-            width: 20%;
-            display: flex;
-            justify-content: space-around;
-        }
-        .card-ch .deps .d-one .controls li{
-            list-style: none;
-        }
-        .head h2{
-            font-size: 1.2rem;
-        }
-    </style>
     <!-- staff -->
     <div class="staff-container" id="staff_Display">
         <div class="container">
@@ -234,18 +114,78 @@
                 </a>
             </li>
             <li>
-                <a href="#fac">
-                    <i class="fa-solid fa-server"></i>
-                    <span>Facultés</span>
+                <a href="#">
+                    <i class="fa-solid fa-bars"></i>
+                    <span>Edit</span>
                 </a>
             </li>
             <li>
-                <a href="#dep">
-                    <i class="fa-solid fa-th-list"></i>
-                    <span>Départements</span>
+                <a href="#">
+                    <i class="fa-solid fa-user"></i>
+                    <span>Edit</span>
                 </a>
             </li>
-           
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-user-tie"></i>
+                    <span>Edit</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-book"></i>
+                    <span>Edit</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-user-secret"></i>
+                    <span>Edit</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-book"></i>
+                    <span>Edit</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-lock"></i>
+                    <span>Edit</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-clipboard-user"></i>
+                    <span>Edit</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-users"></i>
+                    <span>Edit</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-clipboard-user"></i>
+                    <span>Edit</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-clipboard-user"></i>
+                    <span>Edit</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <span>Edit</span>
+                </a>
+            </li>
+
         </ul>
        </div>
     </div>
@@ -257,7 +197,7 @@
             </div>
         </div>
         <div class="main-body">
-            <div class="container" style="margin-bottom: 0;padding-bottom: 1rem;">
+            <div class="container">
                 <!-- <h class="heading">DashBord | Admin</h> -->
                 <div class="box-container">
                     <div class="box">
@@ -284,381 +224,35 @@
                         <h2 class="title">Students</h2>
                         <h2 class="subtitle">439 Students</h2>
                     </div>
-                    
-                </div>
-            </div>
-            <!-- --------------------------------------------------------------------- FACULTE----------------- -->
-            <div class="faculte" id="fac">
-                <div class="head">
-                    <div class="left">
-                        <h2 class="title">Facultés</h2>
+                    <div class="box">
+                        <h2 class="title">Students</h2>
+                        <h2 class="subtitle">439 Students</h2>
                     </div>
-                    <div class="right">
-                        <li class="tt" data-bs-placement="left" title="Ajouter Département">
-                            <button class="btn btn-primary" id=""> <i class="fa-solid fa-plus"></i></button>
-                        </li>
+                    <div class="box">
+                        <h2 class="title">Students</h2>
+                        <h2 class="subtitle">439 Students</h2>
                     </div>
-                </div>
-                <div class="children">
-                    <!-- First Faculty -->
-                    <div class="card-ch">
-                        <div class="controls">
-                            <div class="left">
-                                <h2>Faculté de Techonologie et science de l'ingénieur</h2>
-                            </div>
-                            <div class="right">
-                                <li class="tt" data-bs-placement="top" title="Modifier la Faculté">
-                                    <button class="btn btn-outline-primary btn-sm" id=""> <i class="fa-solid fa-edit"></i></button>
-                                </li>
-                                <li class="tt" data-bs-placement="top" title="Supprimer la Faculté">
-                                    <button class="btn btn-outline-danger btn-sm"> <i class="fa-solid fa-trash"></i></button>
-                                </li>
-                            </div>
-                        </div>
-                        <div class="deps">
-                            <!-- <div class="h2 dep-title">Départements</div> -->
-                           
-                            <div class="d-one">
-                                <div class="dep-title">
-                                    <h2>Génie info</h2>
-                                </div>
-                                <div class="controls">
-                                    <li class="tt" data-bs-placement="top" title="# etudiants">
-                                        <h2 class="number" style="font-size: 1.2rem;"><span>20</span>  <i class="fa-solid fa-users"></i></h2>                                        
-                                    </li>
-                                </div>
-                            </div>
-                            <div class="d-one">
-                                <div class="dep-title">
-                                    <h2>Génie info</h2>
-                                </div>
-                                <div class="controls">
-                                    <li class="tt" data-bs-placement="top" title="# etudiants">
-                                        <h2 class="number" style="font-size: 1.2rem;"><span>20</span>  <i class="fa-solid fa-users"></i></h2>                                        
-                                    </li>
-                                </div>
-                            </div>
-                            <div class="d-one">
-                                <div class="dep-title">
-                                    <h2>Génie info</h2>
-                                </div>
-                                <div class="controls">
-                                    <li class="tt" data-bs-placement="top" title="# etudiants">
-                                        <h2 class="number" style="font-size: 1.2rem;"><span>20</span>  <i class="fa-solid fa-users"></i></h2>                                        
-                                    </li>
-                                </div>
-                            </div>
-                            <div class="d-one">
-                                <div class="dep-title">
-                                    <h2>Génie info</h2>
-                                </div>
-                                <div class="controls">
-                                    <li class="tt" data-bs-placement="top" title="# etudiants">
-                                        <h2 class="number" style="font-size: 1.2rem;"><span>20</span>  <i class="fa-solid fa-users"></i></h2>                                        
-                                    </li>
-                                </div>
-                            </div>
-                            <div class="d-one">
-                                <div class="dep-title">
-                                    <h2>Génie info</h2>
-                                </div>
-                                <div class="controls">
-                                    <li class="tt" data-bs-placement="top" title="# etudiants">
-                                        <h2 class="number" style="font-size: 1.2rem;"><span>20</span>  <i class="fa-solid fa-users"></i></h2>                                        
-                                    </li>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="box">
+                        <h2 class="title">Students</h2>
+                        <h2 class="subtitle">439 Students</h2>
                     </div>
-                    <!-- second fac -->
-                    <div class="card-ch">
-                        <div class="controls">
-                            <div class="left">
-                                <h2>Faculté de Techonologie et science de l'ingénieur</h2>
-                            </div>
-                            <div class="right">
-                                <li class="tt" data-bs-placement="top" title="Modifier la Faculté">
-                                    <button class="btn btn-outline-primary btn-sm" id=""> <i class="fa-solid fa-edit"></i></button>
-                                </li>
-                                <li class="tt" data-bs-placement="top" title="Supprimer la Faculté">
-                                    <button class="btn btn-outline-danger btn-sm"> <i class="fa-solid fa-trash"></i></button>
-                                </li>
-                            </div>
-                        </div>
-                        <div class="deps">
-                            <!-- <div class="h2 dep-title">Départements</div> -->
-                           
-                            <div class="d-one">
-                                <div class="dep-title">
-                                    <h2>Génie info</h2>
-                                </div>
-                                <div class="controls">
-                                    <li class="tt" data-bs-placement="top" title="# etudiants">
-                                        <h2 class="number" style="font-size: 1.2rem;"><span>20</span>  <i class="fa-solid fa-users"></i></h2>                                        
-                                    </li>
-                                </div>
-                            </div>
-                            <div class="d-one">
-                                <div class="dep-title">
-                                    <h2>Génie info</h2>
-                                </div>
-                                <div class="controls">
-                                    <li class="tt" data-bs-placement="top" title="# etudiants">
-                                        <h2 class="number" style="font-size: 1.2rem;"><span>20</span>  <i class="fa-solid fa-users"></i></h2>                                        
-                                    </li>
-                                </div>
-                            </div>
-                            <div class="d-one">
-                                <div class="dep-title">
-                                    <h2>Génie info</h2>
-                                </div>
-                                <div class="controls">
-                                    <li class="tt" data-bs-placement="top" title="# etudiants">
-                                        <h2 class="number" style="font-size: 1.2rem;"><span>20</span>  <i class="fa-solid fa-users"></i></h2>                                        
-                                    </li>
-                                </div>
-                            </div>
-                            <div class="d-one">
-                                <div class="dep-title">
-                                    <h2>Génie info</h2>
-                                </div>
-                                <div class="controls">
-                                    <li class="tt" data-bs-placement="top" title="# etudiants">
-                                        <h2 class="number" style="font-size: 1.2rem;"><span>20</span>  <i class="fa-solid fa-users"></i></h2>                                        
-                                    </li>
-                                </div>
-                            </div>
-                            <div class="d-one">
-                                <div class="dep-title">
-                                    <h2>Génie info</h2>
-                                </div>
-                                <div class="controls">
-                                    
-                                    <li class="tt" data-bs-placement="top" title="# etudiants">
-                                        <h2 class="number" style="font-size: 1.2rem;"><span>20</span>  <i class="fa-solid fa-users"></i></h2>                                        
-                                    </li>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="box">
+                        <h2 class="title">Students</h2>
+                        <h2 class="subtitle">439 Students</h2>
                     </div>
-                    <!-- third fac -->
-                    <div class="card-ch">
-                        <div class="controls">
-                            <div class="left">
-                                <h2>Faculté de Techonologie et science de l'ingénieur</h2>
-                            </div>
-                            <div class="right">
-                                <li class="tt" data-bs-placement="top" title="Modifier la Faculté">
-                                    <button class="btn btn-outline-primary btn-sm" id=""> <i class="fa-solid fa-edit"></i></button>
-                                </li>
-                                <li class="tt" data-bs-placement="top" title="Supprimer la Faculté">
-                                    <button class="btn btn-outline-danger btn-sm"> <i class="fa-solid fa-trash"></i></button>
-                                </li>
-                            </div>
-                        </div>
-                        <div class="deps">
-                            <!-- <div class="h2 dep-title">Départements</div> -->
-                           
-                            <div class="d-one">
-                                <div class="dep-title">
-                                    <h2>Génie info</h2>
-                                </div>
-                                <div class="controls">
-                                    <li class="tt" data-bs-placement="top" title="# etudiants">
-                                        <h2 class="number" style="font-size: 1.2rem;"><span>20</span>  <i class="fa-solid fa-users"></i></h2>                                        
-                                    </li>
-                                </div>
-                            </div>
-                            <div class="d-one">
-                                <div class="dep-title">
-                                    <h2>Génie info</h2>
-                                </div>
-                                <div class="controls">
-                                    <li class="tt" data-bs-placement="top" title="# etudiants">
-                                        <h2 class="number" style="font-size: 1.2rem;"><span>20</span>  <i class="fa-solid fa-users"></i></h2>                                        
-                                    </li>
-                                </div>
-                            </div>
-                            <div class="d-one">
-                                <div class="dep-title">
-                                    <h2>Génie info</h2>
-                                </div>
-                                <div class="controls">
-                                    <li class="tt" data-bs-placement="top" title="# etudiants">
-                                        <h2 class="number" style="font-size: 1.2rem;"><span>20</span>  <i class="fa-solid fa-users"></i></h2>                                        
-                                    </li>
-                                </div>
-                            </div>
-                            <div class="d-one">
-                                <div class="dep-title">
-                                    <h2>Génie info</h2>
-                                </div>
-                                <div class="controls">
-                                    <li class="tt" data-bs-placement="top" title="# etudiants">
-                                        <h2 class="number" style="font-size: 1.2rem;"><span>20</span>  <i class="fa-solid fa-users"></i></h2>                                        
-                                    </li>
-                                </div>
-                            </div>
-                            <div class="d-one">
-                                <div class="dep-title">
-                                    <h2>Génie info</h2>
-                                </div>
-                                <div class="controls">
-                                    <li class="tt" data-bs-placement="top" title="# etudiants">
-                                        <h2 class="number" style="font-size: 1.2rem;"><span>20</span>  <i class="fa-solid fa-users"></i></h2>                                        
-                                    </li>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="box">
+                        <h2 class="title">Students</h2>
+                        <h2 class="subtitle">439 Students</h2>
                     </div>
-                </div>
-            </div>
-            <!-- ---------------------------------------------------------------------- DEPARTEMENT------------- -->
-            <div class="faculte" id="dep">
-                <div class="head">
-                    <div class="left">
-                        <h2 class="title">Départements</h2>
+                    <div class="box">
+                        <h2 class="title">Students</h2>
+                        <h2 class="subtitle">439 Students</h2>
                     </div>
-                </div>
-                <div class="children">
-                    <div class="card-ch">
-                        <h2>Faculté de Techonologie et science de l'ingénieur</h2>
-                        <div class="deps">
-                            <!-- <div class="h2 dep-title">Départements</div> -->
-                            <div class="d-one">
-                                <div class="dep-title">
-                                    <h2>Génie info</h2>
-                                </div>
-                                <div class="controls">
-                                    <li class="tt" data-bs-placement="top" title="Modifier">
-                                        <button class="btn btn-primary btn-sm" id=""> <i class="fa-solid fa-edit"></i></button>
-                                    </li>
-                                    <li class="tt" data-bs-placement="top" title="Supprimer">
-                                        <button class="btn btn-danger btn-sm"> <i class="fa-solid fa-trash"></i></button>
-                                    </li>
-                                </div>
-                                
-                            </div>
-                            <div class="d-one">
-                                <div class="dep-title">
-                                    <h2>Génie info</h2>
-                                </div>
-                                <div class="controls">
-                                    <li class="tt" data-bs-placement="top" title="Modifier">
-                                        <button class="btn btn-primary btn-sm" id=""> <i class="fa-solid fa-edit"></i></button>
-                                    </li>
-                                    <li class="tt" data-bs-placement="top" title="Supprimer">
-                                        <button class="btn btn-danger btn-sm"> <i class="fa-solid fa-trash"></i></button>
-                                    </li>
-                                </div>
-                                
-                            </div>
-                            <div class="d-one">
-                                <div class="dep-title">
-                                    <h2>Génie info</h2>
-                                </div>
-                                <div class="controls">
-                                    <li class="tt" data-bs-placement="top" title="Modifier">
-                                        <button class="btn btn-primary btn-sm" id=""> <i class="fa-solid fa-edit"></i></button>
-                                    </li>
-                                    <li class="tt" data-bs-placement="top" title="Supprimer">
-                                        <button class="btn btn-danger btn-sm"> <i class="fa-solid fa-trash"></i></button>
-                                    </li>
-                                </div>
-                                
-                            </div>
-                            <div class="d-one">
-                                <div class="dep-title">
-                                    <h2>Génie info</h2>
-                                </div>
-                                <div class="controls">
-                                    <li class="tt" data-bs-placement="top" title="Modifier">
-                                        <button class="btn btn-primary btn-sm" id=""> <i class="fa-solid fa-edit"></i></button>
-                                    </li>
-                                    <li class="tt" data-bs-placement="top" title="Supprimer">
-                                        <button class="btn btn-danger btn-sm"> <i class="fa-solid fa-trash"></i></button>
-                                    </li>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                    <!-- second fac -->
-                    <div class="card-ch">
-                        <h2>Faculté de Techonologie et science de l'ingénieur</h2>
-                        <div class="deps">
-                            <!-- <div class="h2 dep-title">Départements</div> -->
-                            <div class="d-one">
-                                <div class="dep-title">
-                                    <h2>Génie info</h2>
-                                </div>
-                                <div class="controls">
-                                    <li class="tt" data-bs-placement="top" title="Modifier">
-                                        <button class="btn btn-primary btn-sm" id=""> <i class="fa-solid fa-edit"></i></button>
-                                    </li>
-                                    <li class="tt" data-bs-placement="top" title="Supprimer">
-                                        <button class="btn btn-danger btn-sm"> <i class="fa-solid fa-trash"></i></button>
-                                    </li>
-                                </div>
-                                
-                            </div>
-                            <div class="d-one">
-                                <div class="dep-title">
-                                    <h2>Génie info</h2>
-                                </div>
-                                <div class="controls">
-                                    <li class="tt" data-bs-placement="top" title="Modifier">
-                                        <button class="btn btn-primary btn-sm" id=""> <i class="fa-solid fa-edit"></i></button>
-                                    </li>
-                                    <li class="tt" data-bs-placement="top" title="Supprimer">
-                                        <button class="btn btn-danger btn-sm"> <i class="fa-solid fa-trash"></i></button>
-                                    </li>
-                                </div>
-                                
-                            </div>
-                            <div class="d-one">
-                                <div class="dep-title">
-                                    <h2>Génie info</h2>
-                                </div>
-                                <div class="controls">
-                                    <li class="tt" data-bs-placement="top" title="Modifier">
-                                        <button class="btn btn-primary btn-sm" id=""> <i class="fa-solid fa-edit"></i></button>
-                                    </li>
-                                    <li class="tt" data-bs-placement="top" title="Supprimer">
-                                        <button class="btn btn-danger btn-sm"> <i class="fa-solid fa-trash"></i></button>
-                                    </li>
-                                </div>
-                                
-                            </div>
-                            <div class="d-one">
-                                <div class="dep-title">
-                                    <h2>Génie info</h2>
-                                </div>
-                                <div class="controls">
-                                    <li class="tt" data-bs-placement="top" title="Modifier">
-                                        <button class="btn btn-primary btn-sm" id=""> <i class="fa-solid fa-edit"></i></button>
-                                    </li>
-                                    <li class="tt" data-bs-placement="top" title="Supprimer">
-                                        <button class="btn btn-danger btn-sm"> <i class="fa-solid fa-trash"></i></button>
-                                    </li>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                    <!-- third fac -->
                 </div>
             </div>
         </div>
     </div>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-         // toolTip
-        const tooltips =document.querySelectorAll('.tt')
-        tooltips.forEach(t => {
-          new bootstrap.Tooltip(t)
-        })
-        // toolTip end
         let staffDisplay = document.getElementById('staff_Display');
         let staffCancel = document.getElementById('staff_Cancel');
         let staffValidation = document.getElementById('staff_Validation');
