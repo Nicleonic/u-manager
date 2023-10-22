@@ -9,8 +9,9 @@
                 
                 $etudiant_0=new etudiant_0();
                 if (isset($_GET[$etudiant_0->table."-all"])) {
-
+                    
                     $output=$etudiant_0->All();
+
                     // $temp=[];
                     // $faculte=new faculte();
                     // $faculte=$faculte->all()["data"];

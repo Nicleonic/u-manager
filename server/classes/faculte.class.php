@@ -2,7 +2,6 @@
 
                 class faculte extends tables{        
                     public function __construct(){
-                        $bdd=new tables();
                         $this->table="faculte";
                     }
                 }
