@@ -379,6 +379,9 @@ header{
     margin-top: 0;
     overflow-y: auto;
 }
+.sidebar .side-list ul{
+    border: 0px solid #831b1b!important;
+}
 .sidebar h2{
     margin-bottom: 0;
     height: 2.5rem;
@@ -391,7 +394,7 @@ header{
 .sidebar ul li a{
     text-decoration: none;
     color: #ffff;
-    padding: 0 30px;
+    padding: 0 10px;
 }
 .sidebar ul li a i{
     margin-right: 10px;
