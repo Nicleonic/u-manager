@@ -53,8 +53,9 @@
       $.post(url, reqData,
         function (data, textStatus, jqXHR) {
           console.log(data);
-          data.reverse();
-          data.forEach(e => {
+          // data.data.reverse();
+          $("#list").html("");
+          data.data.reverse().forEach(e => {
             $("#list").append(
               `
                 <li class="student " onclick="oneStud(`+e.id+`)">
@@ -75,9 +76,9 @@
       );
   }
   loadList({},"server/?etudiant_0-all");
-  $("#search").keydown(function (e) { 
-    $("#list").html("");
-    loadList({"nom":$(this).val()},"server/?etudiant_0-search")
+  $("#search").keyup(function (e) { 
+    console.log($(this).val());
+    loadList({"all_column":$(this).val()},"server/?etudiant_0-search")
   });
   function oneStud(id){
     window.open("stud.html?id="+id,"_self")
