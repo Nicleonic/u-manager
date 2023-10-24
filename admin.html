@@ -368,32 +368,38 @@
 
 
     <div class="sidebar">
-        <h2>Admin</h2>
+        <h2>U-MANAGER</h2>
        <div class="side-list">
         <ul>
-            <li id="staff_Add">
-                <a href="#">
-                    <i class="fa-solid fa-plus"></i>
-                    <span>Staff</span>
+            <li >
+                <a href="#" onclick="machine('home')">
+                    <i class="fa-solid fa-home"></i>
+                    <span>Home</span>
                 </a>
             </li>
+            <!-- <li id="staff_Add">
+                <a href="#">
+                    <i class="fa-solid fa-users"></i>
+                    <span>Staff</span>
+                </a>
+            </li> -->
            
             <li>
-                <a href="#fac">
+                <a href="#fac" onclick="machine('faculte')">
                     <i class="fa-solid fa-server"></i>
                     <span>Faculté</span>
                 </a>
             </li>
             <li>
-                <a href="#dep">
+                <a href="#dep" onclick="machine('departement')">
                     <i class="fa-solid fa-folder-open"></i>
                     <span>Département</span>
                 </a>
             </li>
-            <li>
+            <li onclick="machine('staff')">
                 <a href="#userList">
                     <i class="fa-solid fa-th-list"></i>
-                    <span>Users List</span>
+                    <span>Staff</span>
                 </a>
             </li>
           
@@ -403,43 +409,21 @@
     </div>
     <div class="main">
         <div class="main-header">
-            <h2>Admin DashBoard</h2>
+            <h2></h2>
             <div class="controls" onclick="window.open('apparitorat.html','_self')">
                 <i class="fa-solid fa-right-from-bracket"></i>
             </div>
         </div>
         <div class="main-body ">
-            <div class="container  pb-3">
+            <div class="container  pb-3 mt-12" id="home">
                 <!-- <h class="heading">DashBord | Admin</h> -->
                 <div class="box-container">
-                    <div class="box">
-                        <h2 class="title">Students</h2>
-                        <h2 class="subtitle">439 Students</h2>
-                    </div>
-                    <div class="box">
-                        <h2 class="title">Students</h2>
-                        <h2 class="subtitle">439 Students</h2>
-                    </div>
-                    <div class="box">
-                        <h2 class="title">Students</h2>
-                        <h2 class="subtitle">439 Students</h2>
-                    </div>
-                    <div class="box">
-                        <h2 class="title">Students</h2>
-                        <h2 class="subtitle">439 Students</h2>
-                    </div>
-                    <div class="box">
-                        <h2 class="title">Students</h2>
-                        <h2 class="subtitle">439 Students</h2>
-                    </div>
-                    <div class="box">
-                        <h2 class="title">Students</h2>
-                        <h2 class="subtitle">439 Students</h2>
-                    </div>                    
+                    
+                                    
                 </div>
             </div>
             <!-- -------------- facultes container -->
-            <div class="faculte" id="fac">
+            <div class="faculte" id="faculte" style="border: none;margin-top:5%">
                 <div class="fac-head">
                     <div class="fac-h-title">
                         <h2 class="">Facultés</h2>
@@ -582,7 +566,7 @@
 
 
             <!-- -------------- departement container -->
-            <div class="departem mt-4" id="dep">
+            <div class="departem mt-12" id="departement" style="border: none;margin-top:5%">
                 <div class="dep-head">
                     <div class="dh-title">
                         <h2 class="">Départements</h2>
@@ -647,10 +631,16 @@
 
 
             <!-- ----------------- Users List -->
-            <div class="usersList mt-4" id="userList">
+            <div class="usersList mt-12" id="staff" style="border: none;margin-top:5%">
                 <div class="dep-head">
                     <div class="dh-title">
-                        <h2 class="">Liste des Utilisateurs</h2>
+                        <h2 class="">Staff</h2>
+                        
+                    </div>
+                    <div class="fac-h-control" id="staff_Add">
+                        <li class="tt" data-bs-placement="top" title="Ajouter un staff">
+                            <button class="btn btn-log tt" id="modify"  > <i class="fa-solid fa-plus"></i></button>
+                        </li>
                     </div>
                     <div class="dh-control">
                     </div>
@@ -732,8 +722,10 @@
     </div>
 
     <!-- ------------- scripts -->
+    <script src="src/jquery.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script>
+
         // toolTip
         const tooltips =document.querySelectorAll('.tt')
         tooltips.forEach(t => {
@@ -749,22 +741,90 @@
         let adminAdd = document.getElementById('admin_Add');
 
         // staff controls
-        staffAdd.addEventListener('click', ()=>{
-            console.log("staff display [ON]")
+        $("#staff_Add").click(function (e) { 
+            e.preventDefault();
+            staffDisplay.classList.add("active")
+            
+        });
+        // staffAdd.addEventListener('click', ()=>{
+        //     console.log("staff display [ON]")
 
-        staffDisplay.classList.add("active")
-        })
+        
+        // })
 
         function removeStaffDisplay(){
             staffDisplay.classList.remove("active");
         }
-        // Admin controls
-        adminAdd.addEventListener('click', ()=>{
-            adminDisplay.classList.add('active');
-        })
+        // // Admin controls
+        // adminAdd.addEventListener('click', ()=>{
+        //     adminDisplay.classList.add('active');
+        // })
         function removeAdminDisplay(){
             adminDisplay.classList.remove("active");
         }
+        function machine(section) {
+            $("#home").hide(); 
+            $("#faculte").hide(); 
+            $("#departement").hide(); 
+            $("#staff").hide(); 
+            if (section==null) {
+                $("#home").show();
+                section="home"
+            }else{
+                $("#"+section).show();
+            }
+            // $("#"+section).height("100vh")
+            // $("#"+section).pad("100vh")
+            
+        }
+        machine(null)
+        
+        $.get("server/", {"etudiant_0-all":""},
+            function (data, textStatus, jqXHR) {
+                $("#home>div").append(`
+                    <div class="box">
+                        <h2 class="title">Etudiants Inscrits</h2>
+                        <h2 class="subtitle">${data.data.length} Etudiant(s)</h2>
+                    </div>
+                `);
+            },
+            "json"
+        );
+        
+        $.get("server/", {"etudiant_1-all":""},
+            function (data, textStatus, jqXHR) {
+                $("#home>div").append(`
+                    <div class="box">
+                        <h2 class="title">Etudiants validés</h2>
+                        <h2 class="subtitle">${data.data.length} Etudiant(s)</h2>
+                    </div>
+                `);
+            },
+            "json"
+        );
+        
+        $.get("server/", {"faculte-all":""},
+            function (data, textStatus, jqXHR) {
+                $("#home>div").append(`
+                    <div class="box">
+                        <h2 class="title">Facultes</h2>
+                        <h2 class="subtitle">${data.data.length} Faculte(s)</h2>
+                    </div>
+                `);
+            },
+            "json"
+        );
+        $.get("server/", {"staff-all":""},
+            function (data, textStatus, jqXHR) {
+                $("#home>div").append(`
+                    <div class="box">
+                        <h2 class="title">Staff</h2>
+                        <h2 class="subtitle">${data.data.length} Staff(s)</h2>
+                    </div>
+                `);
+            },
+            "json"
+        );
     </script>
 </body>
 </html>

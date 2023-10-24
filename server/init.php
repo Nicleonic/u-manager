@@ -1,6 +1,6 @@
 <!-- Speed php project 1.0 [SPP PHP API GENERATOR] -->
 <?php
-    print_r("\n\nCration of project file by - FrankM Architecture project\n");
+    print_r("Api generator from a database\n");
     
     // Complete by your db information
     $host='localhost';
@@ -11,6 +11,7 @@
     // From here Don't change nothing
     if (!is_dir("classes")) {
         mkdir("classes");
+        mkdir("controllers");
         $code='
             class bdd{
                 var $host="'.$host.'";
@@ -111,14 +112,15 @@
     foreach ($bdd->listTable() as $key) {
         $key=$key["0"];
         if (!file_exists("classes/".$key.".class.php")) {
-            $code='
+            $class='
                 class '.$key.' extends tables{        
                     public function __construct(){
-                        $bdd=new tables();
                         $this->table="'.$key.'";
                     }
                 }
-                $'.$key.'=new '.$key.'();
+                $'.$key.'=new '.$key.'(); 
+            ';
+            $controller='
                 if (isset($_GET[$'.$key.'->table."-all"])) {
                     $output=$'.$key.'->All();
                 }
@@ -137,25 +139,31 @@
                 if (isset($_GET[$'.$key.'->table."-search"])) {
                     $output=$'.$key.'->search($_POST);
                 }
-
             ';
-            file_put_contents("classes/".$key.".class.php","<?php\n".$code);
-            file_put_contents("classes.php",file_get_contents("classes.php")."\trequire 'classes/".$key.".class.php';\n");
+            file_put_contents("classes/".$key.".class.php","<?php\n".$class);
+            file_put_contents("controllers/".$key.".controller.php","<?php\n".$controller);
             echo "classes/".$key.".class.php : Generated\n";
+            echo "controllers/".$key.".class.php : Generated\n";
         }    
     }
-    if (!file_exists("index.php") || true) {
+    $requereDir = ["classes","controllers"];
+    file_put_contents("requirement.php","<?php\n");
+    foreach($requereDir as $dir){
+        $files = glob($dir . "/*.php");
+        foreach ($files as $file) {
+            file_put_contents("requirement.php",file_get_contents("requirement.php")."\trequire_once  '".$file."';\n");
+        } 
+    }
+
+    if (!file_exists("index.php")) {
         $code='
             header("Access-Control-Allow-Origin: *");
             header("Content-Type: application/json");
             $output=array("message"=>"Aucune requete","state"=>true,"data"=>[]);
-            require "classes.php";
+            require "classes/bdd.class.php";
+            require "requirement.php";
             echo json_encode($output);
         ';
         file_put_contents("index.php","<?php\n".$code);
         echo "index.php : generated";
     }
-
-    
-    
-    

@@ -159,9 +159,18 @@
             font-size: 1.2rem;
             font-weight: bolder;
         }
+        ul{
+            display: grid;
+            row-gap: 2px;
+        }
         li{
             display: grid;
-            grid-template-columns: 20% auto;
+            grid-template-columns: 30% auto;
+            align-items: center;
+            row-gap: 2px;
+            background: rgba(0, 0, 0, 0.842);
+            color: white;
+            padding: 5px;
             /* gap: 100px; */
         }
         li>span{
@@ -209,7 +218,7 @@
     </style>
 
     <!-- ------------------------  VALIDE Student start -->
-    <div class="st-valide" id="val_Display">
+    <div class="st-valide" id="val_Display" >
         <div class="container">
             <div class="cancel_btn " style="display: flex;justify-content: center;cursor: pointer;" onclick={removeValDisplay()} id="val_Cancel">
                 <span><i class="fas fa-xmark"></i></span>
@@ -269,7 +278,7 @@
     
     <section class="body-container">
      
-        <div class="student-info" style="border: 2px solid rgb(0, 0, 0);">
+        <div class="student-info" style="border: 0px solid rgb(0, 0, 0);">
             
 
             <div class="stud-header " style="display: flex;align-items:flex-start;border: solid blue 0px;">
@@ -284,7 +293,7 @@
                                     <button class="btn btn-success tt" id="valide" data-bs-placement="top" title="Valider"> <i class="fa-solid fa-check"></i></button>
                                 <!-- </li> -->
                                 <!-- <li class="tt" data-bs-placement="top" title="Modifier"> -->
-                                    <button class="btn btn-primary tt" id="modify" onclick="alert('fonctionnalité non disponible')" data-bs-placement="top" title="Modifier"> <i class="fa-solid fa-edit"></i></button>
+                                    <button class="btn btn-primary tt" id="modify" data-bs-placement="top" title="Modifier"> <i class="fa-solid fa-edit"></i></button>
                                 <!-- </li> -->
                                 <!-- <li class="tt" data-bs-placement="top" title="Supprimer"> -->
                                     <button class="btn btn-danger tt" id="del" data-bs-placement="top" title="Supprimer" onclick="alert('fonctionnalité non disponible')"> <i class="fa-solid fa-trash"></i></button>
@@ -305,44 +314,53 @@
                         <li>Matt.    : <span id="matricule">......</span></li>
                         <li>Promotion     : <span id="promotion">......</span></li>
                         <li>Département   : <span id="departement">......</span></li>
-                        <li>Faculté       : <span id="">......</span></li>
+                        <li>Faculté       : <span id="faculte">......</span></li>
                         <li>Téléphone       : <span id="telephone">......</span></li>
                     </ul>
-                    <h2 class="id-title">Autres infos sur l'Etudiant</h2>
-
+                    <h2 class="id-title">Adresses</h2>
                     <ul>
-                        <li>Nom du Père     : <span>......</span></li>
-                        <li>Tél. du Père  : <span>......</span></li>
-
-                        <li>Nom de la Mère : <span>......</span></li>
-                        <li>Tél. de la Mère  : <span>......</span></li>
-
-                        <li>Pays d'origine     : <span>......</span></li>
-                        <li>Province d'origine    : <span>......</span></li>
-                        <li>Territoire d'origine     : <span>......</span></li>
-                        <li>Confession religieuse   : <span>......</span></li>
-                        <li>Langues parlée(s)       : <span>......</span></li>
-                        <li>Ville   : <span></span> </li>
-                        <li>Commune :  <span></span></li>
-                        <li>Quartier    :  <span></span></li>
-                        <li>Nom de l'école frequentée    :  <span></span></li>
-                        <li>Section faite    :  <span></span></li>
-                        <li>Année d'obtention du diplôme    :  <span></span></li>
-                        <li>Pourcentage du diplôme    :  <span></span></li>
-                        <li>Numéro du diplôme d'Etat    :  <span></span></li>
-                        <li>Activités professionnelles   :  <span></span></li>
-                        <li>Année académique    :  <span></span></li>
-                        <li>Etablissement    :  <span></span></li>
-                        <li>Promotion    :  <span></span></li>
-                        <li>Département    :  <span></span></li>
-                        <li>Faculté   :  <span></span></li>
+                        <li>Ville   : <span id="ville_actuelle"></span> </li>
+                        <li>Commune :  <span id="commune_actulle"></span></li>
+                        <li>Quartier    :  <span id="quartier_actuel"></span></li>
+                        <li>Pays d'origine     : <span id="pays_origine">......</span></li>
+                        <li>Province d'origine    : <span id="province_origine">......</span></li>
+                        <li>Territoire d'origine     : <span id="territoire_origine">......</span></li>
+                    </ul>
+                    
+                    <h2 class="id-title">Ecole secondaire</h2>
+                    <ul>
+                        <li>Nom de l'école frequentée    :  <span id="ecole_secondaire"></span></li>
+                        <li>Section faite    :  <span id="section_secondaire"></span></li>
+                        <li>Année d'obtention du diplôme    :  <span id="annee_diplome"></span></li>
+                        <li>Pourcentage du diplôme    :  <span id="pourcentage_diplome"></span></li>
+                        <li>Numéro du diplôme d'Etat    :  <span id="numero_diplome"></span></li>
+                        
+                    </ul>
+                    <h2 class="id-title">Université de provenance</h2>
+                    <ul>
+                        <li>Année académique    :  <span id="last_annee_academique"></span></li>
+                        <li>Etablissement    :  <span id="last_etablissement"></span></li>
+                        <li>Promotion    :  <span id="last_promotion"></span></li>
+                        <li>Département    :  <span id="last_departement"></span></li>
+                        <li>Faculté   :  <span id="last_faculte"></span></li>
                     </ul>
                     <h2 class="id-title">Documents requis</h2>
                     <ul>
-                        <li>Attestation du diplôme     : <span>......</span></li>
-                        <li>Attestation de bonnes moeurses  : <span>......</span></li>
-                        <li>Attestation d'engagement     : <span>......</span></li>
-                        <li>Relevés (pour ancients)  : <span>......</span></li>
+                        <li>Attestation du diplôme     : <span id="at_diplome_secondaire">......</span></li>
+                        <li>Attestation de bonnes moeurses  : <span id="at_bonnes_moeurses">......</span></li>
+                        <li>Attestation d'engagement     : <span id="at_engagement">......</span></li>
+                        <li>Relevés (pour ancients)  : <span id="at_releve">......</span></li>
+                    </ul>
+
+                    <h2 class="id-title">Autres infos</h2>
+                    <ul>
+                        <li>Nom du Père     : <span id="pere_nom">......</span></li>
+                        <li>Tél. du Père  : <span id="pere_tel">......</span></li>
+                        <li>Nom de la Mère : <span id="mere_nom">......</span></li>
+                        <li>Tél. de la Mère  : <span id="mere_tel">......</span></li>
+                        <li>Confession religieuse   : <span id="religion">......</span></li>
+                        <li>Langues parlée(s)       : <span id="langues">......</span></li>
+                        <li>Activités professionnelles   :  <span id="profession"></span></li>    
                     </ul>
                 </div>
                 
@@ -367,6 +385,10 @@
         function removeValDisplay(){
             valDisplay.classList.remove("active");
         }
+        $("#modify").click(function (e) { 
+            e.preventDefault();
+            valDisplay.classList.add('active');
+        });
 
         // toolTip
         const tooltips =document.querySelectorAll('.tt')
@@ -390,17 +412,46 @@
                             console.log(keys);
                             for(var i of keys){
                                 console.log(i);
-                                $("#"+i).text(element[i]);
+                                if (element[i]=="" || element[i]=="0" || element[i]=="off") {
+                                    element[i]='<i class="fa-solid fa-close" style="color:red"></i>'
+                                }
+                                if (element[i]=="on") {
+                                    element[i]='<i class="fa-solid fa-check"></i>'
+                                    $("#"+i).html(element[i]);
+                                }
+                                $("#"+i).html(element[i]);                           
                             }
                         });
                     } else {
                         window.open("find.html","_self")
                     }
-                    
+                    $.get("server/", {'departement-byId':$("#departement").text()},
+                        function (data, textStatus, jqXHR) {
+                            console.log(data);
+                            $("#departement").text(data.data[0].nom_complet);
+                            $.get("server/", {'faculte-byId':data.data[0].id_faculte},
+                                function (data1, textStatus, jqXHR) {
+                                    console.log(data1);
+                                    $("#faculte").text(data1.data[0].nom_complet);
+                                    
+                                },
+                                "json"
+                            );
+                        },
+                        "json"
+                    );
+                    $.get("server/", {'promotion-byId':$("#promotion").text()},
+                        function (data, textStatus, jqXHR) {
+                            console.log(data);
+                            $("#promotion").text(data.data[0].nom_complet);
+                        },
+                        "json"
+                    );
                     // console.log(data);
                 },
                 "json"
             );
+
         }else{
             window.open("find.html","_self")
         }
